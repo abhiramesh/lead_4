@@ -1,40 +1,53 @@
-<div class="container bgimg" align="center">
-	<img src="/assets/logo.png" class="logo">
-	<img src="/assets/header.png" class="header-phone">
-	<div class="formimg">
-		<div class="form-heading">
-			Do You Qualify for Benefits?
-		</div>
-		<div class="progress">
-			<div class="bar" style="width:10%;"></div>
-		</div>
+<div class="container" align="center">
+	<div class="logo">
+		<img src="/assets/logo.png">
+	</div>
+	<div class="bbb-logo">
+		<img src="/assets/bbb.png">
+	</div>
+	<div class="home-title">
+		Need help with your Social Security disability claim?
+		<br>
+		Get your FREE, no-obligation evaluation now.
+	</div>
+	<div class="home-subtitle">
+		All free evaluations are performed by an experienced social security disability advocate or attorney.
+	</div>
+	<div class="progress-bar">
+		<img src="/assets/progress-1.png">
+	</div>
+	<div class="woman-pic">
+		<img src="/assets/woman.png">
+	</div>
+	<div class="form-box">
 		<%= form_for User.new, remote: true, :html => {:id => "form1"} do |f| %>
-			<%= f.label :age, 'How old are you?' %>
-			<%= f.select :age, options_for_select(("18".."62")), {:include_blank => 'Select from'}, :onchange => ("$('#form1').submit()") %>
-			<div id="newsubmit1"/>
+			<span id="phone">Phone:</span>
+			<%= f.text_field :phone, :placeholder => "215-444-3344" %>
+			<br>
+			<span id="email">Email:</span>
+			<%= f.text_field :email, :placeholder => "bob@yahoo.com" %>
+			<br>
+			<span id="firstname">First Name:</span>
+			<%= text_field_tag :first_name, nil, :placeholder => "First Name" %>
+			<br>
+			<span id="lastname">Last Name:</span>
+			<%= text_field_tag :last_name, nil, :placeholder => "Last Name" %>
+			<br>
+			<span id="zipcode">Zipcode:</span>
+			<%= text_field_tag :zipcode, nil, placeholder: "Zipcode" %>
+			<br>
+			<div id="newsubmit1"></div>
+			<%= f.submit "Do I Qualify?", :class => "home-submit" %>
 		<% end %>
 	</div>
-</div>
-<div class="box-background">
-	<div class="box-title">
-		Receive a <span class="box-free">FREE</span> disability guide
-	</div>
-	<div class="box-learn">
-		Learn:
-	</div>
-	<div class="box-desc">
-		How to <span class="box-bold">qualify</span> for disability
-	</div>
-	<div class="box-desc">
-		How to <span class="box-bold">apply</span> for disability
-	</div>
-	<div class="box-desc">
-		How to <span class="box-bold">not be denied</span> your benefits
+	<div class="arrow">
+		<img src="/assets/arrow.png">
 	</div>
 </div>
-<div class="container">
+<div class="container" align="center">
 	<div class="logos-box">
-		<img src="/assets/logos.png" class="logos">
+		<hr>
+		<img src="/assets/logos.png">
 	</div>
 	<div class="disclaimer">
 		<div class="privacy">
@@ -43,9 +56,4 @@
 		Disclaimer: THIS IS AN ADVERTISEMENT. Advertising is paid for by participating attorneys and advocates. The site is not an attorney referral service. This website is privately owned and is not affiliated with or endorsed by Social Security Administration or any other government agency. The promotion of this website is sponsored exclusively by professional Social Security Attorneys and Advocacy Groups, in effort to provide services to the public for Disability issues.
 	</div>
 </div>
-<%= render '/users/form2' %>
-<%= render '/users/form3' %>
-<%= render '/users/form4' %>
-<%= render '/users/form5' %>
-<%= render '/users/form6' %>
-<%= render '/users/form7' %>
+<%= render partial: "users/form2" %>

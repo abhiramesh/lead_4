@@ -1,9 +1,7 @@
 $('#form1').hide();
-$('#form2').show().insertAfter('div.progress');
+$('#form2').show().appendTo('.form-box');
 $('#form2').attr('action','/users/' + '<%=current_user.id%>');
-$('#form3').attr('action','/users/' + '<%=current_user.id%>');
-$('#form4').attr('action','/users/' + '<%=current_user.id%>');
-$('#form5').attr('action','/users/' + '<%=current_user.id%>');
-$('#form6').attr('action','/users/' + '<%=current_user.id%>');
-$('#form7').attr('action','/users/' + '<%=current_user.id%>');
-$('.bar').attr('style', 'width:20%;');
+$('.progress-bar img').attr('src','/assets/progress-2.png');
+$('.arrow').hide();
+$('.logos-box').css('margin-top', '-35px')
+$('#submit2').css('margin-left', '0px')

@@ -1,11 +1,29 @@
 <div id="form2">
-	<%= label_tag :zipcode, 'Your zipcode is:' %>
-	<%= text_field_tag :zipcode, nil, placeholder: "Zipcode", :style => "width:120px;" %>
-	<div class="message" id="zip_error"></div>
-	<div class='submit', id="submit2">
-		Next
+	<%= label_tag :age, 'How old are you?' %>
+	<%= select_tag :age, options_for_select(("18".."62")), {:include_blank => 'Select from'}%>
+	<div class="message" id="age_error"></div>
+
+	<%= label_tag :employment, 'Your employment status is:' %>
+	<%= select_tag :employment, options_for_select(employment_options) %>
+	<div class="desc">
+		You must be making less than $1,500 per/month to qualify.
 	</div>
-	<div class="back-link" id="back-link-1">Back</div>
+	<div class="message" id="employment_error"></div>
+
+	<%= label_tag :medical, 'Have you seen a doctor in the last 6 months?' %>
+	<%= select_tag :medical, options_for_select(medical_options) %>
+	<div class="desc">
+		You need to have a medical record within the past 6 months to qualify.
+	</div>
+	<div class="message" id="medical_error"></div>
+	
+	<%= label_tag :attorney, 'Do you currently have a disability or attorney advocate?' %>
+	<%= select_tag :attorney, options_for_select(attorney_options) %>
+	<div class="desc">
+	</div>
+	<div class="message" id="attorney_error"></div>
+
+	<%= submit_tag "Get My Results", :class => "home-submit", :id => "submit2"%>
 </div>
 <script type="text/javascript">
 	$('#submit2').click(function(event) {
