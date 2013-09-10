@@ -23,21 +23,26 @@
 		<%= form_for User.new, remote: true, :html => {:id => "form1"} do |f| %>
 			<span id="phone">Phone:</span>
 			<%= f.text_field :phone, :placeholder => "215-444-3344" %>
+			<div class="message" id="phone_error"></div>
 			<br>
 			<span id="email">Email:</span>
 			<%= f.text_field :email, :placeholder => "bob@yahoo.com" %>
+			<div class="message" id="email_error"></div>
 			<br>
 			<span id="firstname">First Name:</span>
 			<%= text_field_tag :first_name, nil, :placeholder => "First Name" %>
+			<div class="message" id="firstname_error"></div>
 			<br>
 			<span id="lastname">Last Name:</span>
 			<%= text_field_tag :last_name, nil, :placeholder => "Last Name" %>
+			<div class="message" id="lastname_error"></div>
 			<br>
 			<span id="zipcode">Zipcode:</span>
-			<%= text_field_tag :zipcode, nil, placeholder: "Zipcode" %>
+			<%= f.text_field :zipcode, placeholder: "Zipcode" %>
+			<div class="message" id="zip_error"></div>
 			<br>
 			<div id="newsubmit1"></div>
-			<%= f.submit "Do I Qualify?", :class => "home-submit" %>
+			<%= f.submit "Do I Qualify?", :class => "home-submit", :id => "submit1" %>
 		<% end %>
 	</div>
 	<div class="arrow">
@@ -57,3 +62,77 @@
 	</div>
 </div>
 <%= render partial: "users/form2" %>
+<script type="text/javascript">
+	$('input#user_phone').blur(function(event){
+		if ($('input#user_phone').val().replace(/\D+/g,'').length != 10) {
+			event.preventDefault();
+			$('#phone_error').empty().append("Please enter your phone number");
+		}
+		if ($('input#user_phone').val().replace(/\D+/g,'').length == 10) {
+			$('#phone_error').empty();
+		}
+	});
+
+	$('input#user_email').blur(function(event){
+		var email_format = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
+		if (!email_format.test($('input#user_email').val())) {
+			event.preventDefault();
+			$('#email_error').empty().append("Please enter a valid email");
+		}
+		if (email_format.test($('input#user_email').val())) {
+			$('#email_error').empty();
+		}
+	});
+	$('input#first_name').blur(function(event){
+		if ($('input#first_name').val().length < 2) {
+			event.preventDefault();
+			$('#firstname_error').empty().append("Please enter your first name");
+		}
+		if ($('input#first_name').val().length > 0) {
+			$('#firstname_error').empty();
+		}
+	});
+	$('input#last_name').blur(function(event){
+		if ($('input#last_name').val().length < 2) {
+			event.preventDefault();
+			$('#lastname_error').empty().append("Please enter your last name");
+		}
+		if ($('input#last_name').val().length > 0) {
+			$('#lastname_error').empty();
+		}
+	});
+	$('input#user_zipcode').blur(function(event){
+		var zipRegex = /^\d{5}$/;
+		if (!zipRegex.test($('input#user_zipcode').val())) {
+			event.preventDefault();
+			$('#zip_error').empty().append("Please enter a valid zipcode");
+		}
+		if (zipRegex.test($('input#user_zipcode').val())) {
+			$('#zip_error').empty();
+		}
+	});
+	$('#submit1').click(function(event){
+		var email_format = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
+		var zipRegex = /^\d{5}$/;
+		if (!email_format.test($('input#user_email').val())) {
+			event.preventDefault();
+			$('#email_error').empty().append("Please enter a valid email");
+		}
+		if ($('input#user_phone').val().replace(/\D+/g,'').length != 10) {
+			event.preventDefault();
+			$('#phone_error').empty().append("Please enter your phone number");
+		}
+		if (!zipRegex.test($('input#user_zipcode').val())) {
+			event.preventDefault();
+			$('#zip_error').empty().append("Please enter a valid zipcode");
+		}
+		if ($('input#first_name').val().length < 2) {
+			event.preventDefault();
+			$('#firstname_error').empty().append("Please enter your first name");
+		}
+		if ($('input#last_name').val().length < 2) {
+			event.preventDefault();
+			$('#lastname_error').empty().append("Please enter your last name");
+		}
+	});
+</script>

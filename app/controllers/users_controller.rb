@@ -65,10 +65,6 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-    if params["zipcode"]
-      @user.zipcode = params["zipcode"]
-      @user.save!
-    end
     if params["age"]
       @user.age = params["age"]
       @user.save!
@@ -85,23 +81,11 @@ class UsersController < ApplicationController
       @user.attorney = params["attorney"]
       @user.save!
     end
-    if params["name"]
-      @user.name = params["name"]
-      @user.save!
-    end
-    if params["phone"]
-      @user.phone = params["phone"]
-      @user.save!
-    end
-    if params["email"]
-      @user.email = params["email"]
-      @user.save!
-    end
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to '/logout' }
         format.json { head :no_content }
-        format.js {}
+        format.js { redirect_to '/logout'}
         if @user.email != nil
       #    a = Mechanize.new
        #   url = "https://leads.leadtracksystem.com/genericPostlead.php"

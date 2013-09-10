@@ -27,45 +27,15 @@
 </div>
 <script type="text/javascript">
 	$('#submit2').click(function(event) {
-  		event.preventDefault();
-  		var zipRegex = /^\d{5}$/;
-		if (!zipRegex.test($('input#zipcode').val())) {
-			event.preventDefault();
-			$('#zip_error').empty().append("Please enter a valid zipcode");
-		}
-		else {
-			$.ajax({
+		$.ajax({
 			  type: "POST",
 			  url: $('#form2').attr('action'),
-			  data: { zipcode: $("#zipcode").val() },
+			  data: { age: $("#age").val(), employment: $("#employment").val(), medical: $("#medical").val(), attorney: $("#attorney").val() },
 			  dataType: "script",
-			  async: false
-			});
-			$('#form2').hide();
-			$('#form3').show().insertAfter('div.progress');
-			$('.bar').attr('style', 'width:40%;');
-		}
-	});
-	$('#back-link-1').click(function(){
-		$('#form2').hide();
-		$('#form1').show().insertAfter('div.progress');
-		$('#newsubmit1').empty().append($('<input class="submit" id="submit6" name="commit" type="submit" value="Next">'));
-	});
-	$('input#zipcode').blur(function(event){
-		var zipRegex = /^\d{5}$/;
-		if (!zipRegex.test($('input#zipcode').val())) {
-			event.preventDefault();
-			$('#zip_error').empty().append("Please enter a valid zipcode");
-		}
-		if (zipRegex.test($('input#zipcode').val())) {
-			$('#zip_error').empty();
-		}
-	});
-	$('#submit2').click(function(event){
-		var zipRegex = /^\d{5}$/;
-		if (!zipRegex.test($('input#zipcode').val())) {
-			event.preventDefault();
-			$('#zip_error').empty().append("Please enter a valid zipcode");
-		}
+			  async: false,
+			  success: function() {
+			  	window.location.href = "/logout"
+			  }
+		});
 	});
 </script>
