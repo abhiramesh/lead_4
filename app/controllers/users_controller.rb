@@ -18,8 +18,6 @@ class UsersController < ApplicationController
   def extra_info
     if current_user
       @user = current_user
-    else
-      redirect_to root_path
     end
   end
 
@@ -104,9 +102,8 @@ class UsersController < ApplicationController
               state = geo.state
               url = "https://leads.leadtracksystem.com/genericPostlead.php"
               params = {
-                "Test_Lead" => "1",
                 "TYPE" => '85',
-                "SRC" => "PujiiTestSite",
+                "SRC" => "PujiiComp2",
                 "Landing_Page" => "amp1",
                 "IP_Address" => "75.2.92.149",
                 "First_Name" => @user.name.split(' ')[0],

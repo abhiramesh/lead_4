@@ -36,7 +36,7 @@
 </div>
 <script type="text/javascript">
 	$('#submit2').click(function(event) {
-		if ($('textarea#desc').val().length < 1) {
+		if ($('textarea#user_desc').val().length < 1) {
 			event.preventDefault();
 			$('#desc_error').empty().append("Please describe your disability");
 			$('#desccheck img').hide();
@@ -54,13 +54,13 @@
 		// 	});
 		// }
 	});
-	$('textarea#desc').blur(function(event){
-		if ($('textarea#desc').val().length < 1) {
+	$('textarea#user_desc').blur(function(event){
+		if ($('textarea#user_desc').val().length < 1) {
 			event.preventDefault();
 			$('#desc_error').empty().append("Please describe your disability");
 			$('#desccheck img').hide();
 		}
-		if ($('textarea#desc').val().length > 1) {
+		if ($('textarea#user_desc').val().length > 1) {
 			$('#desc_error').empty();
 			$('#desccheck img').show();
 		}
