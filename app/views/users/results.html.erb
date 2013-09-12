@@ -16,7 +16,7 @@
 	<br>
 	<% @users.each do |u| %>
 		<div class="row">
-			<div class="span5" style="font-size:10px;">
+			<div class="span5" style="font-size:9px;">
 				<%= u.campaign %>
 			</div>
 			<div class="span2">
@@ -34,7 +34,7 @@
 				<% end %>
 			</div>
 			<div class="span3">
-				<%= u.created_at %>
+				<%= u.created_at.in_time_zone("Pacific Time (US & Canada)") %>
 			</div>
 		</div>
 	<% end %>
