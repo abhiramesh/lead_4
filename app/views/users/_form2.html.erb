@@ -1,41 +1,81 @@
-<div id="form2">
-	<%= label_tag :age, 'How old are you?' %>
-	<%= select_tag :age, options_for_select(("18".."62")), {:include_blank => 'Select from'}%>
+<%= form_for @user, :html => {:id => "form2"} do |f| %>
+	<%= f.label :age, 'How old are you?' %>
+	<%= f.select :age, options_for_select(age_options) %>
+	<span class="checkimg" id="agecheck"><img src="/assets/check.png"></span>
 	<div class="message" id="age_error"></div>
 
-	<%= label_tag :employment, 'Your employment status is:' %>
-	<%= select_tag :employment, options_for_select(employment_options) %>
+	<%= f.label :employment, 'Do you expect to be unemployed for at least 12 months?' %>
+	<%= f.select :employment, options_for_select(employment_options) %>
+	<span class="checkimg" id="employmentcheck"><img src="/assets/check.png"></span>
 	<div class="desc">
-		You must be making less than $1,500 per/month to qualify.
 	</div>
 	<div class="message" id="employment_error"></div>
 
-	<%= label_tag :medical, 'Have you seen a doctor in the last 6 months?' %>
-	<%= select_tag :medical, options_for_select(medical_options) %>
+	<%= f.label :medical, 'Are you currently receiving medical treatment for your disabling condition?' %>
+	<%= f.select :medical, options_for_select(medical_options) %>
+	<span class="checkimg" id="medicalcheck"><img src="/assets/check.png"></span>
 	<div class="desc">
-		You need to have a medical record within the past 6 months to qualify.
 	</div>
 	<div class="message" id="medical_error"></div>
 	
-	<%= label_tag :attorney, 'Do you currently have a disability or attorney advocate?' %>
-	<%= select_tag :attorney, options_for_select(attorney_options) %>
+	<%= f.label :attorney, 'Do you currently have a disability or attorney advocate?' %>
+	<%= f.select :attorney, options_for_select(attorney_options) %>
+	<span class="checkimg" id="attorneycheck"><img src="/assets/check.png"></span>
 	<div class="desc">
 	</div>
 	<div class="message" id="attorney_error"></div>
 
-	<%= submit_tag "Get My Results", :class => "home-submit", :id => "submit2"%>
+	<%= f.label :desc, 'Describe your disability and how it prevents you from working' %>
+	<%= f.text_area :desc %>
+	<span class="checkimg" id="desccheck"><img src="/assets/check.png"></span>
+	<div class="desc">
+	</div>
+	<div class="message" id="desc_error"></div>
+	<%= f.submit "Get My Results", :class => "home-submit", :id => "submit2"%>
+	<% end %>
 </div>
 <script type="text/javascript">
 	$('#submit2').click(function(event) {
-		$.ajax({
-			  type: "POST",
-			  url: $('#form2').attr('action'),
-			  data: { age: $("#age").val(), employment: $("#employment").val(), medical: $("#medical").val(), attorney: $("#attorney").val() },
-			  dataType: "script",
-			  async: false,
-			  success: function() {
-			  	window.location.href = "/logout"
-			  }
-		});
+		if ($('textarea#desc').val().length < 1) {
+			event.preventDefault();
+			$('#desc_error').empty().append("Please describe your disability");
+			$('#desccheck img').hide();
+		}
+		// else {
+		// 	$.ajax({
+		// 		  type: "POST",
+		// 		  url: $('#form2').attr('action'),
+		// 		  data: { age: $("#age").val(), employment: $("#employment").val(), medical: $("#medical").val(), attorney: $("#attorney").val(), desc: $("#desc").val() },
+		// 		  dataType: "script",
+		// 		  async: false,
+		// 		  success: function() {
+		// 		  	window.location.href = "/logout"
+		// 		  }
+		// 	});
+		// }
 	});
+	$('textarea#desc').blur(function(event){
+		if ($('textarea#desc').val().length < 1) {
+			event.preventDefault();
+			$('#desc_error').empty().append("Please describe your disability");
+			$('#desccheck img').hide();
+		}
+		if ($('textarea#desc').val().length > 1) {
+			$('#desc_error').empty();
+			$('#desccheck img').show();
+		}
+	});
+	$('select#age').bind('click change',function() {
+		$('#agecheck img').show();
+	});
+	$('select#employment').bind('click change',function() {
+		$('#employmentcheck img').show();
+	});
+	$('select#medical').bind('click change',function() {
+		$('#medicalcheck img').show();
+	});
+	$('select#attorney').bind('click change',function() {
+		$('#attorneycheck img').show();
+	});
+
 </script>

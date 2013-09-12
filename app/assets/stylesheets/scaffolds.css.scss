@@ -95,7 +95,11 @@
 input{
   height: 30px !important;
   border-radius: 0px !important;
-  margin-bottom: 15px !important;
+  margin-bottom: 10px !important;
+}
+
+textarea{
+  height: 80px !important;
 }
 
 span#phone{
@@ -118,7 +122,16 @@ span#zipcode{
   margin-right: 39px;
 }
 
+span#debt, span#loan, select#user_loan, select#user_debt{
+  margin-left: 100px;
+}
+
 #form2{
+  display: none;
+}
+
+.checkimg img {
+  margin-top: -10px;
   display: none;
 }
 

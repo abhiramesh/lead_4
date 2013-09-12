@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :authorize, :except => [:new, :create, :edit, :update, :results]
+  before_filter :authorize, :except => [:new, :create, :edit, :update, :results, :extra_info]
 
   require 'mechanize'
+  require 'geokit'
 
   # GET /users
   # GET /users.json
@@ -11,6 +12,14 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
+    end
+  end
+
+  def extra_info
+    if current_user
+      @user = current_user
+    else
+      redirect_to root_path
     end
   end
 
@@ -81,42 +90,93 @@ class UsersController < ApplicationController
       @user.attorney = params["attorney"]
       @user.save!
     end
-    respond_to do |format|
+    if params["desc"]
+      @user.desc = params["desc"]
+      @user.save!
+    end
       if @user.update_attributes(params[:user])
-        format.html { redirect_to '/logout' }
-        format.json { head :no_content }
-        format.js { redirect_to '/logout'}
-        if @user.email != nil
-      #    a = Mechanize.new
-       #   url = "https://leads.leadtracksystem.com/genericPostlead.php"
-        #  params = {
-         #   "TYPE" => '85',
-          #  "SRC" => "PujiiTestSite",
-          #  "Landing_Page" => "amp1",
-           # "IP_Address" => "75.2.92.149",
-#            "First_Name" => @user.name.split(' ')[0],
- #           "Last_Name" => @user.name.split(' ')[1],
-  #          "State" => "PA",
-   #         "Zip" => @user.zipcode,
-#            "Email" => @user.email,
- #           "Day_Phone" => @user.phone,
-  #          "Age" => @user.age,
-   #         "Employment_Status" => @user.employment,
-    #        "Medical_Status" => @user.medical,
-     #       "Representation_Status" => @user.attorney,
-      #      "Unsecured Debt" => "Yes, I need debt help",
-       #     "Student Loans" => "Yes, I need student debt help"
-        #  }
-         # response = a.post(url, params)
-#          d = Nokogiri::XML(response.content)
- #         @user.lead = d.xpath("//lead_id").text
-  #        @user.save!
+        if @user.phone && @user.age != "Under 18" && @user.age != "18-29" && @user.employment == "Making less than $1500 per month" && @user.attorney == "No" && @user.medical == "Yes"
+          @user.qualified = true
+          @user.save!
+          a = Mechanize.new
+            geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(@user.zipcode)
+            if geo.success
+              state = geo.state
+              url = "https://leads.leadtracksystem.com/genericPostlead.php"
+              params = {
+                "Test_Lead" => "1",
+                "TYPE" => '85',
+                "SRC" => "PujiiTestSite",
+                "Landing_Page" => "amp1",
+                "IP_Address" => "75.2.92.149",
+                "First_Name" => @user.name.split(' ')[0],
+                "Last_Name" => @user.name.split(' ')[1],
+                "State" => state,
+                "Zip" => @user.zipcode,
+                "Email" => @user.email,
+                "Day_Phone" => @user.phone,
+                "Age" => @user.age,
+                "Employment_Status" => @user.employment,
+                "Medical_Status" => @user.medical,
+                "Representation_Status" => @user.attorney,
+                "Unsecured Debt" => "No, I do not need help",
+                "Student Loans" => "No, I do not need student debt help",
+                "Description" => @user.desc
+              }
+              response = a.post(url, params)
+              puts d = Nokogiri::XML(response.content)
+              @user.lead = d.xpath("//lead_id").text
+              @user.save!
+            end
+          redirect_to '/logout'
+        elsif @user.desc && @user.qualified == nil
+          @user.qualified = false
+          @user.save!
+          redirect_to '/extrainfo'
+        else
+          a = Mechanize.new
+            geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(@user.zipcode)
+            if geo.success
+              state = geo.state
+              if @user.lead.to_s.downcase.include? "vinny"
+                lead_src = "PUJ"
+              elsif @user.lead == "other"
+                lead_src = "REV"
+              else
+                lead_src = "RAW"
+              end
+              lead_src = 
+              url = "https://leads.leadtracksystem.com/genericPostlead.php"
+              params = {
+                "TYPE" => '85',
+                "SRC" => "PujiiTestSite",
+                "Landing_Page" => "amp1",
+                "IP_Address" => "75.2.92.149",
+                "First_Name" => @user.name.split(' ')[0],
+                "Last_Name" => @user.name.split(' ')[1],
+                "State" => state,
+                "Zip" => @user.zipcode,
+                "Email" => @user.email,
+                "Day_Phone" => @user.phone,
+                "Age" => @user.age,
+                "Employment_Status" => @user.employment,
+                "Medical_Status" => @user.medical,
+                "Representation_Status" => @user.attorney,
+                "Unsecured Debt" => @user.debt,
+                "Student Loans" => @user.loan,
+                "Description" => @user.desc,
+                "Pub_ID" => lead_src
+              }
+              response = a.post(url, params)
+              puts d = Nokogiri::XML(response.content)
+              @user.lead = d.xpath("//lead_id").text
+              @user.save!
+            end
+          redirect_to '/logout'
         end
       else
-        format.html { render action: "edit" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        redirect_to '/logout'
       end
-    end
   end
 
   # DELETE /users/1

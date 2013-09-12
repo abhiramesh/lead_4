@@ -8,7 +8,7 @@ development:
   encoding: unicode
   host: localhost
   port: 5432
-  database: mortgage_4_development
+  database: lead2_development
   pool: 5
   timeout: 5000
   username: abhiramesh
@@ -22,7 +22,7 @@ test:
   encoding: unicode
   host: localhost
   port: 5432
-  database: mortgage_4_test
+  database: lead2_test
   pool: 5
   username: abhiramesh
   password: password
@@ -30,7 +30,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: mortgage_4_production
+  database: lead2_production
   pool: 5
   username: abhiramesh
   password: password

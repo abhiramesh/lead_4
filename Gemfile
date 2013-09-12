@@ -12,6 +12,7 @@ gem 'client_side_validations'
 
 gem 'mechanize'
 gem 'json'
+gem 'geokit'
 
 # Gems used only for assets and not required
 # in production environments by default.
