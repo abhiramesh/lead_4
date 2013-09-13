@@ -100,6 +100,13 @@ class UsersController < ApplicationController
             geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(@user.zipcode)
             if geo.success
               state = geo.state
+              if @user.campaign.to_s.downcase.include? "vinny"
+                lead_src = "PUJ"
+              elsif @user.campaign == "other"
+                lead_src = "REV"
+              else
+                lead_src = "RAW"
+              end
               url = "https://leads.leadtracksystem.com/genericPostlead.php"
               params = {
                 "TYPE" => '85',
@@ -118,7 +125,8 @@ class UsersController < ApplicationController
                 "Representation_Status" => @user.attorney,
                 "Unsecured Debt" => "No, I do not need help",
                 "Student Loans" => "No, I do not need student debt help",
-                "Description" => @user.desc
+                "Description" => @user.desc,
+                "Pub_ID" => lead_src
               }
               response = a.post(url, params)
               puts d = Nokogiri::XML(response.content)
@@ -135,18 +143,17 @@ class UsersController < ApplicationController
             geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(@user.zipcode)
             if geo.success
               state = geo.state
-              if @user.lead.to_s.downcase.include? "vinny"
+              if @user.campaign.to_s.downcase.include? "vinny"
                 lead_src = "PUJ"
-              elsif @user.lead == "other"
+              elsif @user.campaign == "other"
                 lead_src = "REV"
               else
                 lead_src = "RAW"
               end
-              lead_src = 
               url = "https://leads.leadtracksystem.com/genericPostlead.php"
               params = {
                 "TYPE" => '85',
-                "SRC" => "PujiiTestSite",
+                "SRC" => "PujiiComp2",
                 "Landing_Page" => "amp1",
                 "IP_Address" => "75.2.92.149",
                 "First_Name" => @user.name.split(' ')[0],
