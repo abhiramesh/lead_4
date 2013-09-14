@@ -102,6 +102,30 @@ textarea{
   height: 80px !important;
 }
 
+.required-star img {
+  position: relative;
+  top: -10px;
+  left: -23px;
+}
+
+.required-star2 img {
+  position: relative;
+  top: -10px;
+  left: -58px;
+}
+
+.required-star3 img {
+  position: relative;
+  top: -10px;
+  left: -50px;
+}
+
+.required-star4 img {
+  position: relative;
+  top: -10px;
+  left: -40px;
+}
+
 span#phone{
   margin-right: 50px;
 }
@@ -129,7 +153,10 @@ span#debt, span#loan {
 select#user_loan, select#user_debt{
   margin-left: 100px;
   margin-top: 10px;
-  margin-bottom: 20px;
+}
+
+select {
+  margin-bottom: 25px !important; 
 }
 
 #form2{
