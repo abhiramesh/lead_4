@@ -15,12 +15,14 @@ progress-2.png: progress-2-4a4638dd2899464972ee64bf02c4c3dd.png
 progress-2/index.png: progress-2-4a4638dd2899464972ee64bf02c4c3dd.png
 progress-3.png: progress-3-d9e060766ce991b93b1e9f0f1ed1e92f.png
 progress-3/index.png: progress-3-d9e060766ce991b93b1e9f0f1ed1e92f.png
+required.gif: required-66700db6e86617eb8b11c8d7548301e9.gif
+required/index.gif: required-66700db6e86617eb8b11c8d7548301e9.gif
 woman.png: woman-82788135aaf0e43df03c684d11454091.png
 woman/index.png: woman-82788135aaf0e43df03c684d11454091.png
 application.js: application-de18d7e6b44271513c9d6f27ea57b7ac.js
 application/index.js: application-de18d7e6b44271513c9d6f27ea57b7ac.js
-application.css: application-1e1d99131e191d7b66f445c66efde66b.css
-application/index.css: application-1e1d99131e191d7b66f445c66efde66b.css
+application.css: application-6ee28777879c452ad0ba7af9af0b59d0.css
+application/index.css: application-6ee28777879c452ad0ba7af9af0b59d0.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 glyphicons-halflings-white.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
