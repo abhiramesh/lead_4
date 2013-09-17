@@ -81,13 +81,20 @@
   box-shadow: 1px 1px 6px #313131;
 }
 
-/* Homepage Content */
+/* Thanks Content */
 
 .thanks-title{
-  margin-top: 280px;
+  margin-top: 250px;
   font-size: 30px;
   line-height: 35px;
   font-weight: bold;
+  background: #EEEEEE;
+  padding: 20px;
+}
+
+.download-guide {
+  color: orangered;
+  font-size: 27px;
 }
 
 /* Form Format */
