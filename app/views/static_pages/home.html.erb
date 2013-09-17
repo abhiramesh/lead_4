@@ -2,76 +2,33 @@
 	<div class="logo">
 		<img src="/assets/logo.png">
 	</div>
-	<div class="bbb-logo">
-		<img src="/assets/bbb.png">
-	</div>
-	<div class="home-title">
-		Need help with your Social Security disability claim?
-		<br>
-		Get your FREE, no-obligation evaluation now.
-	</div>
-	<div class="home-subtitle">
-		All free evaluations are performed by an experienced social security disability advocate or attorney.
-	</div>
-	<div class="progress-bar">
-		<img src="/assets/progress-1.png">
-	</div>
-	<div class="woman-pic">
-		<img src="/assets/woman.png">
-	</div>
-	<div class="form-box">
-		<%= form_for User.new, remote: true, :html => {:id => "form1"} do |f| %>
-			<span id="firstname">First Name:</span>
-			<span class="required-star"><img src="/assets/required.gif"></span>
-			<%= text_field_tag :first_name, nil, :placeholder => "First Name" %>
-			<span class="checkimg" id="firstnamecheck"><img src="/assets/check.png"></span>
-			<div class="message" id="firstname_error"></div>
-			<br>
-			<span id="lastname">Last Name:</span>
-			<span class="required-star"><img src="/assets/required.gif"></span>
-			<%= text_field_tag :last_name, nil, :placeholder => "Last Name" %>
-			<span class="checkimg" id="lastnamecheck"><img src="/assets/check.png"></span>
-			<div class="message" id="lastname_error"></div>
-			<br>
-			<span id="email">Email:</span>
-			<span class="required-star2"><img src="/assets/required.gif"></span>
-			<%= f.text_field :email, :placeholder => "bob@yahoo.com" %>
-			<span class="checkimg" id="emailcheck"><img src="/assets/check.png"></span>
-			<div class="message" id="email_error"></div>
-			<br>
-			<span id="phone">Phone:</span>
-			<span class="required-star3"><img src="/assets/required.gif"></span>
-			<%= f.text_field :phone, :placeholder => "215-444-3344" %>
-			<span class="checkimg" id="phonecheck"><img src="/assets/check.png"></span>
-			<div class="message" id="phone_error"></div>
-			<br>
-			<span id="zipcode">Zipcode:</span>
-			<span class="required-star4"><img src="/assets/required.gif"></span>
-			<%= f.text_field :zipcode, placeholder: "Zipcode" %>
-			<span class="checkimg" id="zipcheck"><img src="/assets/check.png"></span>
-			<div class="message" id="zip_error"></div>
-			<br>
-			<div id="newsubmit1"></div>
-			<%= f.submit "Do I Qualify?", :class => "home-submit", :id => "submit1" %>
-		<% end %>
-	</div>
-	<div class="arrow">
-		<img src="/assets/arrow.png">
-	</div>
 </div>
+<div class="blue-border"></div>
 <div class="container" align="center">
-	<div class="logos-box">
-		<hr>
-		<img src="/assets/logos.png">
-	</div>
-	<div class="disclaimer">
-		<div class="privacy">
-			<a href="/privacy"> Privacy Policy</a>
+	<div class="form-box">
+		<div class="form-title">
+			Free Social Security Disability Case Evaluation
 		</div>
-		Disclaimer: THIS IS AN ADVERTISEMENT. Advertising is paid for by participating attorneys and advocates. The site is not an attorney referral service. This website is privately owned and is not affiliated with or endorsed by Social Security Administration or any other government agency. The promotion of this website is sponsored exclusively by professional Social Security Attorneys and Advocacy Groups, in effort to provide services to the public for Disability issues.
+		<div class="progress-bar">
+			<img src="/assets/progressbar1.png">
+		</div>
+		
 	</div>
 </div>
-<%= render partial: "users/form2" %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script type="text/javascript">
 	$('input#user_phone').blur(function(event){
 		if ($('input#user_phone').val().replace(/\D+/g,'').length != 10 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 0 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 1) {
