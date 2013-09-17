@@ -47234,3 +47234,169 @@ Started POST "/checkzip" for 127.0.0.1 at 2013-09-17 00:26:19 -0400
 Processing by UsersController#checkzip as JS
   Parameters: {"zipcode"=>""}
 Completed 200 OK in 661ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/abhiramesh/rails_projects/lead_2/config/routes.rb:3)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-17 00:31:33 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (4.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 318ms (Views: 157.0ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-17 00:31:34 -0400
+Served asset /scaffolds.css - 200 OK (13ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-09-17 00:31:34 -0400
+Served asset /static_pages.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-17 00:31:34 -0400
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-09-17 00:31:34 -0400
+Served asset /registration.css - 200 OK (4ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-09-17 00:31:34 -0400
+Served asset /users.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-17 00:31:34 -0400
+Served asset /jquery.js - 200 OK (8ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-09-17 00:31:34 -0400
+Served asset /registration.js - 200 OK (1ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-09-17 00:31:34 -0400
+Served asset /static_pages.js - 200 OK (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-17 00:31:34 -0400
+Served asset /users.js - 200 OK (2ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-09-17 00:31:35 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>""}
+Completed 200 OK in 458ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-09-17 00:31:52 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>""}
+Completed 200 OK in 546ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-09-17 00:31:55 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>""}
+Completed 200 OK in 1273ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-09-17 00:31:56 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>""}
+Completed 200 OK in 538ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-09-17 00:31:58 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>""}
+Completed 200 OK in 396ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-09-17 00:31:59 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>""}
+Completed 200 OK in 528ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-09-17 00:32:00 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>"11111"}
+Completed 200 OK in 619ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-09-17 00:32:01 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>"11111"}
+Completed 200 OK in 482ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-09-17 00:32:03 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>"11111"}
+Completed 200 OK in 543ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-09-17 00:32:04 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>"11111"}
+Completed 200 OK in 675ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-09-17 00:32:23 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>"11111"}
+Completed 200 OK in 458ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-17 00:32:54 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (1.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-09-17 00:32:54 -0400
+Served asset /registration.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-17 00:32:54 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-09-17 00:32:54 -0400
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-17 00:32:54 -0400
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-17 00:32:54 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-09-17 00:32:54 -0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-09-17 00:32:54 -0400
+Served asset /registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-09-17 00:32:54 -0400
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-17 00:32:54 -0400
+Served asset /users.js - 200 OK (0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-09-17 00:33:01 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>""}
+Completed 200 OK in 1023ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-09-17 00:33:04 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>""}
+Completed 200 OK in 612ms (Views: 0.1ms | ActiveRecord: 0.0ms)

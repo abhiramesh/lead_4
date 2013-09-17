@@ -74,7 +74,6 @@
 <%= render partial: "users/form2" %>
 <script type="text/javascript">
 	$('input#user_phone').blur(function(event){
-		console.log($('input#user_phone').val().replace(/\D+/g,'').length)
 		if ($('input#user_phone').val().replace(/\D+/g,'').length != 10 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 0 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 1) {
 			event.preventDefault();
 			$('#phone_error').empty().append("Please enter a valid phone number");
@@ -143,22 +142,31 @@
 	});
 	$('#submit1').click(function(event){
 		var email_format = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
-		var zipRegex = /^\d{5}$/;
 		if (!email_format.test($('input#user_email').val())) {
 			event.preventDefault();
 			$('#email_error').empty().append("Please enter a valid email");
 			$('#emailcheck img').hide();
 		}
-		if ($('input#user_phone').val().replace(/\D+/g,'').length != 10) {
+		if ($('input#user_phone').val().replace(/\D+/g,'').length != 10 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 0 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 1) {
 			event.preventDefault();
 			$('#phone_error').empty().append("Please enter your phone number");
 			$('#phonecheck img').hide();
 		}
-		if (!zipRegex.test($('input#user_zipcode').val())) {
-			event.preventDefault();
-			$('#zip_error').empty().append("Please enter a valid zipcode");
-			$('#zipcheck img').hide();
-		}
+		$.ajax({
+			type: "POST",
+			url: '/checkzip',
+			data: { zipcode: $('input#user_zipcode').val() },
+				  dataType: "script",
+				  async: false,
+				  success: function(response) {
+				  	var response = JSON.parse(response)
+					if (response == "no") {
+						event.preventDefault();
+						$('#zip_error').empty().append("Please enter a valid zipcode");
+						$('#zipcheck img').hide();
+					}
+				  }
+		});
 		if ($('input#first_name').val().length < 2) {
 			event.preventDefault();
 			$('#firstname_error').empty().append("Please enter your first name");
