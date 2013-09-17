@@ -17,6 +17,8 @@ Mortgage3::Application.routes.draw do
 
   get '/vpujji1234', to: 'users#results'
 
+  post '/checkzip', to: 'users#checkzip'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -74,12 +74,13 @@
 <%= render partial: "users/form2" %>
 <script type="text/javascript">
 	$('input#user_phone').blur(function(event){
-		if ($('input#user_phone').val().replace(/\D+/g,'').length != 10) {
+		console.log($('input#user_phone').val().replace(/\D+/g,'').length)
+		if ($('input#user_phone').val().replace(/\D+/g,'').length != 10 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 0 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 1) {
 			event.preventDefault();
-			$('#phone_error').empty().append("Please enter your phone number");
+			$('#phone_error').empty().append("Please enter a valid phone number");
 			$('#phonecheck img').hide();
 		}
-		if ($('input#user_phone').val().replace(/\D+/g,'').length == 10) {
+		if ($('input#user_phone').val().replace(/\D+/g,'').length == 10 && $('input#user_phone').val().replace(/\D+/g,'')[0] != 0 && $('input#user_phone').val().replace(/\D+/g,'')[0] != 1) {
 			$('#phone_error').empty();
 			$('#phonecheck img').show();
 		}
@@ -120,16 +121,25 @@
 		}
 	});
 	$('input#user_zipcode').blur(function(event){
-		var zipRegex = /^\d{5}$/;
-		if (!zipRegex.test($('input#user_zipcode').val())) {
-			event.preventDefault();
-			$('#zip_error').empty().append("Please enter a valid zipcode");
-			$('#zipcheck img').hide();
-		}
-		if (zipRegex.test($('input#user_zipcode').val())) {
-			$('#zip_error').empty();
-			$('#zipcheck img').show();
-		}
+		$.ajax({
+			type: "POST",
+			url: '/checkzip',
+			data: { zipcode: $('input#user_zipcode').val() },
+				  dataType: "script",
+				  async: false,
+				  success: function(response) {
+				  	var response = JSON.parse(response)
+					if (response == "no") {
+						event.preventDefault();
+						$('#zip_error').empty().append("Please enter a valid zipcode");
+						$('#zipcheck img').hide();
+					}
+					if (response == "yes") {
+						$('#zip_error').empty();
+						$('#zipcheck img').show();
+					}
+				  }
+			});
 	});
 	$('#submit1').click(function(event){
 		var email_format = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
