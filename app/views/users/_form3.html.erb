@@ -1,0 +1,35 @@
+<%= form_for @user, :html => {:id => "form3"} do |f| %>	
+	<%= f.label :desc, 'Describe your disability and how it prevents you from working' %>
+	<%= f.text_area :desc %>
+	<span class="checkimg" id="desccheck"><img src="/assets/check.png"></span>
+	<div class="desc">
+	</div>
+	<div class="message" id="desc_error"></div>
+
+	<%= f.submit "Next >>", :class => "home-submit", :id => "submit3"%>
+<% end %>
+</div>
+<script type="text/javascript">
+$('#submit3').click(function(event) {
+	event.preventDefault();
+	$.ajax({
+		type: "POST",
+		url: $('#form2').attr('action'),
+		data: { desc: $("#user_desc").val() },
+		dataType: "script",
+		async: false
+	});
+	$('#form3').hide();
+	$('#form4').show().appendTo('.form-box');
+	$('.progress-bar img').attr('src','/assets/progressbar4.png');
+});
+
+$('textarea#user_desc').blur(function(event){
+	if ($('textarea#user_desc').val().length < 1) {
+		$('#desccheck img').hide();
+	}
+	if ($('textarea#user_desc').val().length > 1) {
+		$('#desccheck img').show();
+	}
+});
+</script>

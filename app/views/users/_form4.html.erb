@@ -1,0 +1,107 @@
+<%= form_for @user, :html => {:id => "form4"} do |f| %>	
+	<span id="firstname">First Name:</span>
+	<span class="required-star"><img src="/assets/required.gif"></span>
+	<%= text_field_tag :first_name, nil, :placeholder => "First Name" %>
+	<span class="checkimg" id="firstnamecheck"><img src="/assets/check.png"></span>
+	<div class="message" id="firstname_error"></div>
+	<br>
+
+	<span id="lastname">Last Name:</span>
+	<span class="required-star"><img src="/assets/required.gif"></span>
+	<%= text_field_tag :last_name, nil, :placeholder => "Last Name" %>
+	<span class="checkimg" id="lastnamecheck"><img src="/assets/check.png"></span>
+	<div class="message" id="lastname_error"></div>
+	<br>
+
+	<span id="email">Email:</span>
+	<span class="required-star2"><img src="/assets/required.gif"></span>
+	<%= f.text_field :email, :placeholder => "bob@yahoo.com" %>
+	<span class="checkimg" id="emailcheck"><img src="/assets/check.png"></span>
+	<div class="message" id="email_error"></div>
+	<br>
+
+	<span id="phone">Phone:</span>
+	<span class="required-star3"><img src="/assets/required.gif"></span>
+	<%= f.text_field :phone, :placeholder => "215-444-3344" %>
+	<span class="checkimg" id="phonecheck"><img src="/assets/check.png"></span>
+	<div class="message" id="phone_error"></div>	
+
+	<%= f.submit "Get Results!", :class => "home-submit", :id => "submit4"%>
+<% end %>
+</div>
+<script type="text/javascript">
+	$('input#user_phone').blur(function(event){
+		if ($('input#user_phone').val().replace(/\D+/g,'').length != 10 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 0 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 1) {
+			event.preventDefault();
+			$('#phone_error').empty().append("Please enter a valid phone number");
+			$('#phonecheck img').hide();
+		}
+		if ($('input#user_phone').val().replace(/\D+/g,'').length == 10 && $('input#user_phone').val().replace(/\D+/g,'')[0] != 0 && $('input#user_phone').val().replace(/\D+/g,'')[0] != 1) {
+			$('#phone_error').empty();
+			$('#phonecheck img').show();
+		}
+	});
+
+	$('input#user_email').blur(function(event){
+		var email_format = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
+		if (!email_format.test($('input#user_email').val())) {
+			event.preventDefault();
+			$('#email_error').empty().append("Please enter a valid email");
+			$('#emailcheck img').hide();
+		}
+		if (email_format.test($('input#user_email').val())) {
+			$('#email_error').empty();
+			$('#emailcheck img').show();
+		}
+	});
+
+	$('input#first_name').blur(function(event){
+		if ($('input#first_name').val().length < 2) {
+			event.preventDefault();
+			$('#firstname_error').empty().append("Please enter your first name");
+			$('#firstnamecheck img').hide();
+		}
+		if ($('input#first_name').val().length > 0) {
+			$('#firstname_error').empty();
+			$('#firstnamecheck img').show();
+		}
+	});
+
+	$('input#last_name').blur(function(event){
+		if ($('input#last_name').val().length < 2) {
+			event.preventDefault();
+			$('#lastname_error').empty().append("Please enter your last name");
+			$('#lastnamecheck img').hide();
+		}
+		if ($('input#last_name').val().length > 0) {
+			$('#lastname_error').empty();
+			$('#lastnamecheck img').show();
+		}
+	});
+
+	$('#submit4').click(function(event){
+		var email_format = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
+		if (!email_format.test($('input#user_email').val())) {
+			event.preventDefault();
+			$('#email_error').empty().append("Please enter a valid email");
+			$('#emailcheck img').hide();
+		}
+		if ($('input#user_phone').val().replace(/\D+/g,'').length != 10 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 0 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 1) {
+			event.preventDefault();
+			$('#phone_error').empty().append("Please enter your phone number");
+			$('#phonecheck img').hide();
+		}
+		if ($('input#first_name').val().length < 2) {
+			event.preventDefault();
+			$('#firstname_error').empty().append("Please enter your first name");
+			$('#firstnamecheck img').hide();
+		}
+		if ($('input#last_name').val().length < 2) {
+			event.preventDefault();
+			$('#lastname_error').empty().append("Please enter your last name");
+			$('#lastnamecheck img').hide();
+		}
+	});
+
+
+</script>

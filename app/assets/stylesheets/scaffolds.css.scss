@@ -19,6 +19,8 @@
   padding-top: 10px;
 }
 
+/* Form Box and Form Content */
+
 .form-box{
   float: left;
   margin-top: 50px;
@@ -33,4 +35,193 @@
   font-size: 26px;
   font-weight: bold;
   padding: 10px 0px;
+}
+
+.progress-bar{
+  padding-bottom: 20px;
+}
+
+span#zipcode{
+  margin-left: 10px;
+  font-size: 17px;
+}
+
+input#user_zipcode {
+  height: 30px;
+  border-radius: 2px;
+  border-color: #1E70AE;
+  width: 100px;
+  margin-left: 60px;
+}
+
+span#age{
+  margin-left: 10px;
+  font-size: 17px;
+}
+
+select#user_age {
+  height: 40px;
+  width: 115px;
+  margin-left: 95px;
+  border-color: #1E70AE;
+}
+
+#form2 {
+  display: none;
+}
+
+#form2 label {
+  font-size: 16px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  margin-left: 10px;
+}
+
+#form2 select {
+  margin-left: 10px;
+  height: 40px;
+  width: 115px;
+  border-color: #1E70AE;
+}
+
+#form3{
+  display: none;
+}
+
+#form3 label {
+  font-size: 16px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  margin-left: 10px;
+}
+
+#form3 textarea {
+  height: 80px !important;
+  margin-left: 10px;
+}
+
+#form4{
+  display: none;
+}
+
+span#firstname,span#lastname,span#phone,span#email{
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+#form4 input {
+  height: 30px;
+  border-radius: 2px;
+  border-color: #1E70AE;
+  width: 150px;
+}
+
+input#first_name, input#last_name {
+  margin-left: 80px;
+}
+
+input#user_email {
+  margin-left: 120px;
+}
+
+input#user_phone {
+  margin-left: 113px;
+}
+
+span#debt, span#loan {
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+select#user_debt, select#user_loan{
+  margin-left: 10px;
+  height: 40px;
+  width: 220px;
+  border-color: #1E70AE;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.home-submit{
+  border: solid 1px #777;
+  background: #FF8940;
+  border-radius: 4px !important;
+  width: 180px !important;
+  height: 50px !important;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0px 1px 3px #313131;
+  font-family: 'Open Sans';
+  box-shadow: 1px 1px 4px #313131;
+  margin-left: 100px;
+  margin-top: 25px;
+  float: right;
+}
+
+.home-submit:hover{
+  background: #FFA770;
+  box-shadow: 1px 1px 6px #313131;
+}
+
+.checkimg img{
+  padding-bottom: 10px;
+  display: none;
+}
+
+.message{
+  color: red;
+  margin-top: -5px;
+  padding-bottom: 5px;
+  margin-left: 10px;
+}
+
+/* Side Items from Form */ 
+
+.testimonial {
+  text-align: left;
+  padding: 10px 20px;
+  width: 245px;
+  float: right;
+  background: #EEE;
+  border: solid 1px #CCC;
+  margin-top: 50px;
+}
+
+.testimonial-title{
+  font-size: 22px;
+  padding-top: 10px;
+}
+
+.testimonial-body{
+  padding-bottom: 10px;
+}
+
+.bbb img {
+  width: 100px;
+}
+
+.trustlink img {
+  width: 140px;
+}
+
+.seenin img {
+  width: 295px;
+  margin-left: 22px;
+  padding-top: 20px;
+}
+
+.seenintitle {
+  font-size: 22px;
+  padding-top: 10px;
+  margin-top: 350px;
+}
+
+/* Footer Content */
+
+.footer {
+  width: 100%;
+  background: #1E70AE;
+  padding: 15px 0px;
+  margin-top: 150px;
 }

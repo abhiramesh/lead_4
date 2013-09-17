@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   require 'mechanize'
   require 'geokit'
+  require 'area'
 
   # GET /users
   # GET /users.json
@@ -26,12 +27,18 @@ class UsersController < ApplicationController
   end
 
   def checkzip
-    geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(params["zipcode"])
-      if geo.success
-        render json: "yes".to_json
-      else
-        render json: "no".to_json
-      end
+    # geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(params["zipcode"])
+    #   if geo.success
+    #     render json: "yes".to_json
+    #   else
+    #     render json: "no".to_json
+    #   end
+    if params["zipcode"].length == 5 && params["zipcode"].to_region != nil
+      render json: "yes".to_json
+    else
+      render json: "no".to_json
+    end
+
   end
 
   # GET /users/1
@@ -81,10 +88,6 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-    if params["age"]
-      @user.age = params["age"]
-      @user.save!
-    end
     if params["employment"]
       @user.employment = params["employment"]
       @user.save!
@@ -101,11 +104,15 @@ class UsersController < ApplicationController
       @user.desc = params["desc"]
       @user.save!
     end
+    if params["first_name"] && params["last_name"]
+      @user.name = params["first_name"] + " " + params["last_name"]
+      @user.save!
+    end
       if @user.update_attributes(params[:user])
-        if @user.phone && @user.age != "Under 18" && @user.age != "18-29" && @user.employment == "Making less than $1500 per month" && @user.attorney == "No" && @user.medical == "Yes"
-          @user.qualified = true
-          @user.save!
-          a = Mechanize.new
+         if @user.phone && @user.age != "Under 18" && @user.age != "18-29" && @user.employment == "Making less than $1500 per month" && @user.attorney == "No" && @user.medical == "Yes"
+            @user.qualified = true
+            @user.save!
+            a = Mechanize.new
             geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(@user.zipcode)
             if geo.success
               state = geo.state
@@ -118,6 +125,7 @@ class UsersController < ApplicationController
               end
               url = "https://leads.leadtracksystem.com/genericPostlead.php"
               params = {
+                "Test_Lead" => '1',
                 "TYPE" => '85',
                 "SRC" => "PujiiComp2",
                 "Landing_Page" => "amp1",
@@ -143,13 +151,13 @@ class UsersController < ApplicationController
               @user.lead = d.xpath("//lead_id").text
               @user.save!
             end
-          redirect_to '/logout'
-        elsif @user.desc && @user.qualified == nil
-          @user.qualified = false
-          @user.save!
-          redirect_to '/extrainfo'
-        else
-          a = Mechanize.new
+            redirect_to '/logout'
+       elsif @user.desc && @user.phone && @user.qualified == nil
+           @user.qualified = false
+           @user.save!
+           redirect_to '/extrainfo'
+       elsif @user.qualified == false
+            a = Mechanize.new
             geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(@user.zipcode)
             if geo.success
               state = geo.state
@@ -162,6 +170,7 @@ class UsersController < ApplicationController
               end
               url = "https://leads.leadtracksystem.com/genericPostlead.php"
               params = {
+                "Test_Lead" => '1',
                 "TYPE" => '85',
                 "SRC" => "PujiiComp2",
                 "Landing_Page" => "amp1",
@@ -189,8 +198,6 @@ class UsersController < ApplicationController
             end
           redirect_to '/logout'
         end
-      else
-        redirect_to '/logout'
       end
   end
 

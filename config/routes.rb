@@ -19,6 +19,8 @@ Mortgage3::Application.routes.draw do
 
   post '/checkzip', to: 'users#checkzip'
 
+  get '/terms', to: 'static_pages#terms'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

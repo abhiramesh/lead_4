@@ -2,51 +2,58 @@
 	<div class="logo">
 		<img src="/assets/logo.png">
 	</div>
-	<div class="bbb-logo">
-		<img src="/assets/bbb.png">
-	</div>
-	<div class="home-title">
-		Need help with your Social Security disability claim?
-		<br>
-		Get your FREE, no-obligation evaluation now.
-	</div>
-	<div class="home-subtitle">
-		All free evaluations are performed by an experienced social security disability advocate or attorney.
-	</div>
-	<div class="progress-bar">
-		<img src="/assets/progress-3.png">
-	</div>
-	<div class="woman-pic">
-		<img src="/assets/woman.png">
-	</div>
+</div>
+<div class="blue-border"></div>
+<div class="container" align="center">
 	<div class="form-box">
-		<%= form_for @user do |f| %>
+		<div class="form-title">
+			Free Social Security Disability Case Evaluation
+		</div>
+		<div class="progress-bar">
+			<img src="/assets/progressbar1.png">
+		</div>
+		<%= form_for @user, :html => {:id => "extraform"} do |f| %>
 			<span id="debt">Do you need help paying off debts?</span>
 			<br>
 			<%= f.select :debt, options_for_select(debt_options) %>
 			<span class="checkimg" id="debtcheck"><img src="/assets/check.png"></span>
 			<br>
 			<span id="loan">Do you need help paying off student loans?</span>
+			<br>
 			<%= f.select :loan, options_for_select(loan_options) %>
 			<span class="checkimg" id="loancheck"><img src="/assets/check.png"></span>
 			<br>
-			<div id="newsubmit1"></div>
 			<%= f.submit "Do I Qualify?", :class => "home-submit" %>
 		<% end %>
 	</div>
-</div>
-<div class="container" align="center">
-	<div class="logos-box" style="margin-top:-50px;">
-		<hr>
-		<img src="/assets/logos.png">
-	</div>
-	<div class="disclaimer">
-		<div class="privacy">
-			<a href="/privacy"> Privacy Policy</a>
+<div class="testimonial">
+		<div class="testimonial-title">
+			About Us:
 		</div>
-		Disclaimer: THIS IS AN ADVERTISEMENT. Advertising is paid for by participating attorneys and advocates. The site is not an attorney referral service. This website is privately owned and is not affiliated with or endorsed by Social Security Administration or any other government agency. The promotion of this website is sponsored exclusively by professional Social Security Attorneys and Advocacy Groups, in effort to provide services to the public for Disability issues.
+		<hr>
+		<div class="testimonial-body">
+			Since 2008, we have been helping individuals facing a legal issue find licensed, local attorneys that can help resolve their legal matters. We help over 50,000 consumers every month and our service is provided to you completely and 100% free of charge.
+		</div>
+		<span class="bbb"><img src="/assets/bbb.png"></span>
+		<span class="trustlink"><img src="/assets/trustlink.png"></span>
+	</div>
+	<div class="seenin">
+		<div class="seenintitle">
+			Seen In:
+		</div>
+		<img src="/assets/seenin.png">
 	</div>
 </div>
+<div class="footer">
+	<div class="container" align="right">
+		<div class="disclaimer">
+			<div class="privacy">
+				<a style="color:white;padding-right:20px" href="/privacy"> Privacy Policy</a>
+				<a style="color:white;" href="/terms"> Terms of Use </a>
+			</div>
+		</div>
+	</div>
+</div>	
 
 <script type="text/javascript">
 	$('select#user_loan').bind('click change',function() {

@@ -12,70 +12,56 @@
 		<div class="progress-bar">
 			<img src="/assets/progressbar1.png">
 		</div>
-		
+		<%= form_for User.new, remote: true, :html => {:id => "form1"} do |f| %>
+			<span id="zipcode">What is your zipcode?</span>
+			<span class="required-star"><img src="/assets/required.gif"></span>
+			<%= f.text_field :zipcode, placeholder: "Zipcode" %>
+			<span class="checkimg" id="zipcheck"><img src="/assets/check.png"></span>
+			<div class="message" id="zip_error"></div>
+			<br>
+			<span id="age">How old are you?</span>
+			<span class="required-star"><img src="/assets/required.gif"></span>
+			<%= f.select :age, options_for_select(age_options) %>
+			<span class="checkimg" id="agecheck"><img src="/assets/check.png"></span>
+			<div class="message" id="age_error"></div>
+
+			<div id="newsubmit1"></div>
+			<%= f.submit "Do I Qualify?", :class => "home-submit", :id => "submit1" %>
+		<% end %>
+	</div>
+	<div class="testimonial">
+		<div class="testimonial-title">
+			About Us:
+		</div>
+		<hr>
+		<div class="testimonial-body">
+			Since 2008, we have been helping individuals facing a legal issue find licensed, local attorneys that can help resolve their legal matters. We help over 50,000 consumers every month and our service is provided to you completely and 100% free of charge.
+		</div>
+		<span class="bbb"><img src="/assets/bbb.png"></span>
+		<span class="trustlink"><img src="/assets/trustlink.png"></span>
+	</div>
+	<div class="seenin">
+		<div class="seenintitle">
+			Seen In:
+		</div>
+		<img src="/assets/seenin.png">
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="footer">
+	<div class="container" align="right">
+		<div class="disclaimer">
+			<div class="privacy">
+				<a style="color:white;padding-right:20px" href="/privacy"> Privacy Policy</a>
+				<a style="color:white;" href="/terms"> Terms of Use </a>
+			</div>
+		</div>
+	</div>
+</div>
+<%= render partial: "users/form2" %>
+<%= render partial: "users/form3" %>
+<%= render partial: "users/form4" %>
 
 <script type="text/javascript">
-	$('input#user_phone').blur(function(event){
-		if ($('input#user_phone').val().replace(/\D+/g,'').length != 10 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 0 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 1) {
-			event.preventDefault();
-			$('#phone_error').empty().append("Please enter a valid phone number");
-			$('#phonecheck img').hide();
-		}
-		if ($('input#user_phone').val().replace(/\D+/g,'').length == 10 && $('input#user_phone').val().replace(/\D+/g,'')[0] != 0 && $('input#user_phone').val().replace(/\D+/g,'')[0] != 1) {
-			$('#phone_error').empty();
-			$('#phonecheck img').show();
-		}
-	});
-
-	$('input#user_email').blur(function(event){
-		var email_format = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
-		if (!email_format.test($('input#user_email').val())) {
-			event.preventDefault();
-			$('#email_error').empty().append("Please enter a valid email");
-			$('#emailcheck img').hide();
-		}
-		if (email_format.test($('input#user_email').val())) {
-			$('#email_error').empty();
-			$('#emailcheck img').show();
-		}
-	});
-	$('input#first_name').blur(function(event){
-		if ($('input#first_name').val().length < 2) {
-			event.preventDefault();
-			$('#firstname_error').empty().append("Please enter your first name");
-			$('#firstnamecheck img').hide();
-		}
-		if ($('input#first_name').val().length > 0) {
-			$('#firstname_error').empty();
-			$('#firstnamecheck img').show();
-		}
-	});
-	$('input#last_name').blur(function(event){
-		if ($('input#last_name').val().length < 2) {
-			event.preventDefault();
-			$('#lastname_error').empty().append("Please enter your last name");
-			$('#lastnamecheck img').hide();
-		}
-		if ($('input#last_name').val().length > 0) {
-			$('#lastname_error').empty();
-			$('#lastnamecheck img').show();
-		}
-	});
 	$('input#user_zipcode').blur(function(event){
 		$.ajax({
 			type: "POST",
@@ -98,17 +84,6 @@
 			});
 	});
 	$('#submit1').click(function(event){
-		var email_format = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
-		if (!email_format.test($('input#user_email').val())) {
-			event.preventDefault();
-			$('#email_error').empty().append("Please enter a valid email");
-			$('#emailcheck img').hide();
-		}
-		if ($('input#user_phone').val().replace(/\D+/g,'').length != 10 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 0 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 1) {
-			event.preventDefault();
-			$('#phone_error').empty().append("Please enter your phone number");
-			$('#phonecheck img').hide();
-		}
 		$.ajax({
 			type: "POST",
 			url: '/checkzip',
@@ -124,15 +99,5 @@
 					}
 				  }
 		});
-		if ($('input#first_name').val().length < 2) {
-			event.preventDefault();
-			$('#firstname_error').empty().append("Please enter your first name");
-			$('#firstnamecheck img').hide();
-		}
-		if ($('input#last_name').val().length < 2) {
-			event.preventDefault();
-			$('#lastname_error').empty().append("Please enter your last name");
-			$('#lastnamecheck img').hide();
-		}
 	});
 </script>
