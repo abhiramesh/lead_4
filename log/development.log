@@ -47664,3 +47664,128 @@ Served asset /static_pages.js - 200 OK (0ms)
 
 Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-09-17 13:47:51 -0400
 Served asset /registration.js - 200 OK (0ms)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/abhiramesh/rails_projects/lead_3/config/routes.rb:3)
+  [1m[36m (7.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (3.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20130425195728)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (6.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "zipcode" character varying(255), "home_value" character varying(255), "mortgage_balance" character varying(255), "name" character varying(255), "email" character varying(255), "phone" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130425195728')
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddDeviseToUsers (20130425200059)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (6.8ms)[0m  [1mALTER TABLE "users" ADD COLUMN "encrypted_password" character varying(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD COLUMN "reset_password_token" character varying(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD COLUMN "reset_password_sent_at" timestamp[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD COLUMN "remember_created_at" timestamp
+  [1m[36m (5.0ms)[0m  [1mALTER TABLE "users" ADD COLUMN "sign_in_count" integer DEFAULT 0[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "current_sign_in_at" timestamp
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD COLUMN "last_sign_in_at" timestamp[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD COLUMN "current_sign_in_ip" character varying(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD COLUMN "last_sign_in_ip" character varying(255)[0m
+  [1m[35m (2.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130425200059')
+  [1m[36m (2.8ms)[0m  [1mCOMMIT[0m
+Migrating to AddNewDetailsTousers (20130829015829)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" DROP "home_value"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" DROP "mortgage_balance"
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD COLUMN "age" character varying(255)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD COLUMN "employment" character varying(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD COLUMN "attorney" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "medical" character varying(255)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130829015829')[0m
+  [1m[35m (1.1ms)[0m  COMMIT
+Migrating to AddIpAndLeadToUsers (20130830053110)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD COLUMN "ip" character varying(255)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "lead" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130830053110')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to AddAdInfoToUses (20130903015037)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "campaign" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130903015037')
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Migrating to RemoveIndexEmails (20130910173439)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mDROP INDEX "index_users_on_email"[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130910173439')
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+Migrating to AddDescToUsers (20130912175807)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "desc" text[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130912175807')
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddQualifiedToUsers (20130912214335)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "qualified" boolean[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130912214335')
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Migrating to AddExtraToUsers (20130912215231)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "users" ADD COLUMN "debt" character varying(255)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD COLUMN "loan" character varying(255)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130912215231')[0m
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/abhiramesh/rails_projects/lead_3/config/routes.rb:3)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-17 14:08:00 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 37 LIMIT 1[0m
+  Rendered users/_form2.html.erb (3.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (21.9ms)
+Compiled registration.css  (6ms)  (pid 48117)
+Compiled scaffolds.css  (1222ms)  (pid 48117)
+Compiled static_pages.css  (1ms)  (pid 48117)
+Compiled users.css  (1ms)  (pid 48117)
+Compiled application.css  (1310ms)  (pid 48117)
+Compiled jquery.js  (2ms)  (pid 48117)
+Compiled jquery_ujs.js  (0ms)  (pid 48117)
+Compiled registration.js  (77ms)  (pid 48117)
+Compiled static_pages.js  (134ms)  (pid 48117)
+Compiled users.js  (80ms)  (pid 48117)
+Compiled application.js  (386ms)  (pid 48117)
+Completed 200 OK in 2042ms (Views: 1863.5ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-09-17 14:08:02 -0400
+Served asset /registration.css - 200 OK (2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-09-17 14:08:02 -0400
+Served asset /users.css - 200 OK (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-17 14:08:02 -0400
+Served asset /scaffolds.css - 200 OK (9ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-09-17 14:08:02 -0400
+Served asset /static_pages.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-17 14:08:02 -0400
+Served asset /jquery.js - 200 OK (13ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-17 14:08:02 -0400
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-09-17 14:08:02 -0400
+Served asset /static_pages.js - 200 OK (2ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-09-17 14:08:02 -0400
+Served asset /registration.js - 200 OK (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-17 14:08:02 -0400
+Served asset /users.js - 200 OK (2ms)
