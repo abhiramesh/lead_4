@@ -47,6 +47,27 @@
 		<img src="/assets/seenin.png">
 	</div>
 </div>
+<div class="container" align="left">
+	<div class="info-box">
+		<span class="expand-button"> + </span><span class="info-title"> Social Security Disability Basics</span>
+		<div class="info-text">
+			Applying for Social Security Disability benefits without an attorney can be difficult due to how long a claim can take and the high chance of being denied. Statistically, 70% of all SSDI and SSI claims are denied after the initial application. Most people who go through the process of applying for Social Security Disability will be denied the first time. This may happen even if a claimant's case is strong. For this reason, having a representation on a disability claim is important and can even make the difference between winning and losing.
+
+			At SocialSecurityLawfirms.com, our attorneys will help you get through a difficult and complicated process. The appeals process is where most successful Social Security Disability Claims are won. More specifically, getting a case at a hearing in front of an administrative law judge (ALJ) is where a claimant will have their best opportunity at winning disability benefits.
+
+			There Are Strict Time Limits On Your Appeals
+			If your disability claim has been denied, you should get to understand how the appeals process works, because you have little chances of winning disability benefits if you don't appeal the initial denial and know the steps to take to win the appeal. You are more likely to win your disability case with the help of an experienced disability benefits attorney.
+
+			Important Eligibility Facts for Social Security Disability Benefits
+			There are two fundamental eligibility requirements for Social Security Disability. First, you must be able to prove that you are disabled, as defined by the SSA. Second, you must have either earned enough work credits to considered "insured" under the SSDI program or your income and assets must be low enough to qualify for for the SSI program. The hardest part of Social Security Disability claim is proving that your medical condition is a disability by the Social Security Administration (SSA).
+
+			At SocialSecurityLawfirms.com, our focus is to help you obtain Social Security Disability and Supplemental Security Income benefits. Our disability attorneys can handle claims from the application process, reconsideration to administrative law judge hearings and even to the appeals board. Working with an attorney from our network, you will learn everything you can about the approval system to better your chances of winning on appeal, with the help of a disability attorney or lawyer.
+
+			Receive a Free Case Evaluation
+			Complete this form so that you can get a Free Case Review from a local disability attorney that serves your area. There is no obligation and you will be contacted shortly after the form is submitted.
+		</div>
+	</div>
+</div>
 <div class="footer">
 	<div class="container" align="right">
 		<div class="disclaimer">
@@ -100,4 +121,15 @@
 				  }
 		});
 	});
+	$(".info-box").click(function() {
+		if ($(".expand-button").text() == " + ") {
+			$(".expand-button").text("-");
+		}
+		else {
+			$(".expand-button").text(" + ");
+		}
+		$(".expand-button").toggleClass("minus-button");
+		$( ".info-text" ).slideToggle();
+	});
+
 </script>

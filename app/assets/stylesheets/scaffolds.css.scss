@@ -217,6 +217,49 @@ select#user_debt, select#user_loan{
   margin-top: 350px;
 }
 
+.info-box {
+  padding: 20px 20px 20px 50px;
+  background: #EEEEEE;
+  width: 570px;
+  border: solid 1px;
+  border-radius: 5px;
+  margin-top: -70px;
+  cursor: pointer;
+}
+
+.expand-button {
+  font-size: 29px;
+  padding: 0px 4px 8px 13px;
+  background: #CCC;
+  color: white;
+  font-weight: bold;
+  border-radius: 190px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.minus-button {
+  font-size: 29px;
+  padding: 0px 14px 8px 16px;
+  background: #CCC;
+  color: white;
+  font-weight: bold;
+  border-radius: 190px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.info-title {
+  font-size: 22px;
+  color: #313131;
+  font-weight: bold;
+}
+
+.info-text {
+  padding: 20px 10px;
+  display: none;
+}
+
 /* Footer Content */
 
 .footer {
