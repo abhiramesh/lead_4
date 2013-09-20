@@ -12,8 +12,29 @@ class RegistrationController < Devise::RegistrationsController
     if params["user"]["zipcode"]
       zipcode = params["user"]["zipcode"]
     end
-    @user = User.create(:ip => request.remote_ip, :campaign => campaign, :age => age, :zipcode => zipcode)
-    sign_in @user
+    if params["first_name"] && params["last_name"]
+      name = params["first_name"] + " " + params["last_name"]
+    end
+    if params["user"]["address"]
+      address = params["user"]["address"]
+    end
+    if params["user"]["city"]
+      city = params["user"]["city"]
+    end
+    if params["user"]["state"]
+      state = params["user"]["state"]
+    end
+    if params["user"]["electric"]
+      electric = params["user"]["electric"]
+    end
+    if params["user"]["email"]
+      email = params["user"]["email"]
+    end
+    if params["user"]["phone"]
+      phone = params["user"]["phone"]
+    end
+    @user = User.create(:ip => request.remote_ip, :campaign => campaign, :zipcode => zipcode, :name => name, :address => address, :city => city, :state => state, :email => email, :phone => phone, :electric => electric)
+    redirect_to "/logout"
   end
     
 

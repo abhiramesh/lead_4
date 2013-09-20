@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authorize, :except => [:new, :create, :edit, :update, :results, :extra_info, :checkzip]
+  before_filter :authorize, :except => [:new, :create, :results, :checkzip]
 
   require 'mechanize'
   require 'geokit'
@@ -27,12 +27,6 @@ class UsersController < ApplicationController
   end
 
   def checkzip
-    # geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(params["zipcode"])
-    #   if geo.success
-    #     render json: "yes".to_json
-    #   else
-    #     render json: "no".to_json
-    #   end
     if params["zipcode"].length == 5 && params["zipcode"].to_region != nil
       render json: "yes".to_json
     else
@@ -88,116 +82,8 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-    if params["employment"]
-      @user.employment = params["employment"]
-      @user.save!
-    end
-    if params["medical"]
-      @user.medical = params["medical"]
-      @user.save!
-    end
-    if params["attorney"]
-      @user.attorney = params["attorney"]
-      @user.save!
-    end
-    if params["desc"]
-      @user.desc = params["desc"]
-      @user.save!
-    end
-    if params["first_name"] && params["last_name"]
-      @user.name = params["first_name"] + " " + params["last_name"]
-      @user.save!
-    end
       if @user.update_attributes(params[:user])
-         if @user.phone && @user.age != "Under 18" && @user.age != "18-29" && @user.employment == "Making less than $1500 per month" && @user.attorney == "No" && @user.medical == "Yes"
-            @user.qualified = true
-            @user.save!
-            a = Mechanize.new
-            geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(@user.zipcode)
-            if geo.success
-              state = geo.state
-              if @user.campaign.to_s.downcase.include? "vinny"
-                lead_src = "PUJ"
-              elsif @user.campaign == "other"
-                lead_src = "REV"
-              else
-                lead_src = "RAW"
-              end
-              url = "https://leads.leadtracksystem.com/genericPostlead.php"
-              params = {
-                "Test_Lead" => '1',
-                "TYPE" => '85',
-                "SRC" => "PujiiComp2",
-                "Landing_Page" => "amp1",
-                "IP_Address" => "75.2.92.149",
-                "First_Name" => @user.name.split(' ')[0],
-                "Last_Name" => @user.name.split(' ')[1],
-                "State" => state,
-                "Zip" => @user.zipcode,
-                "Email" => @user.email,
-                "Day_Phone" => @user.phone,
-                "Evening_Phone" => @user.phone,
-                "Age" => @user.age,
-                "Employment_Status" => @user.employment,
-                "Medical_Status" => @user.medical,
-                "Representation_Status" => @user.attorney,
-                "Unsecured Debt" => "No, I do not need help",
-                "Student Loans" => "No, I do not need student debt help",
-                "Description" => @user.desc,
-                "Pub_ID" => lead_src
-              }
-              response = a.post(url, params)
-              puts d = Nokogiri::XML(response.content)
-              @user.lead = d.xpath("//lead_id").text
-              @user.save!
-            end
-            redirect_to '/logout'
-       elsif @user.desc && @user.phone && @user.qualified == nil
-           @user.qualified = false
-           @user.save!
-           redirect_to '/extrainfo'
-       elsif @user.qualified == false
-            a = Mechanize.new
-            geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(@user.zipcode)
-            if geo.success
-              state = geo.state
-              if @user.campaign.to_s.downcase.include? "vinny"
-                lead_src = "PUJ"
-              elsif @user.campaign == "other"
-                lead_src = "REV"
-              else
-                lead_src = "RAW"
-              end
-              url = "https://leads.leadtracksystem.com/genericPostlead.php"
-              params = {
-                "Test_Lead" => '1',
-                "TYPE" => '85',
-                "SRC" => "PujiiComp2",
-                "Landing_Page" => "amp1",
-                "IP_Address" => "75.2.92.149",
-                "First_Name" => @user.name.split(' ')[0],
-                "Last_Name" => @user.name.split(' ')[1],
-                "State" => state,
-                "Zip" => @user.zipcode,
-                "Email" => @user.email,
-                "Day_Phone" => @user.phone,
-                "Evening_Phone" => @user.phone,
-                "Age" => @user.age,
-                "Employment_Status" => @user.employment,
-                "Medical_Status" => @user.medical,
-                "Representation_Status" => @user.attorney,
-                "Unsecured Debt" => @user.debt,
-                "Student Loans" => @user.loan,
-                "Description" => @user.desc,
-                "Pub_ID" => lead_src
-              }
-              response = a.post(url, params)
-              puts d = Nokogiri::XML(response.content)
-              @user.lead = d.xpath("//lead_id").text
-              @user.save!
-            end
           redirect_to '/logout'
-        end
       end
   end
 

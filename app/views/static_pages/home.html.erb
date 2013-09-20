@@ -18,27 +18,27 @@
 				<div class="form-title">
 					Sign Up Now for a <span class="free">Free</span> Quote
 				</div>
-				<%= form_for User.new, remote: true, :html => {:id => "form1"} do |f| %>
+				<%= form_for User.new, :html => {:id => "form1"} do |f| %>
 					<div class="row">
 						<div class="span2">
 							<%= label_tag :first_name %>
 							<%= text_field_tag :first_name, nil, :placeholder => "First Name" %>
-							<span class="checkimg" id="firstnamecheck"><img src="/assets/check.png"></span>
 							<div class="message" id="firstname_error"></div>
 						</div>
 						<div class="span2 lastnamediv">
 							<%= label_tag :last_name %>
 							<%= text_field_tag :last_name, nil, :placeholder => "Last Name" %>
-							<span class="checkimg" id="lastnamecheck"><img src="/assets/check.png"></span>
 							<div class="message" id="lastname_error"></div>
 						</div>
 					</div>
 					<%= label_tag :address %>
 					<%= f.text_field :address, placeholder: "Address" %>
+					<div class="message" id="address_error"></div>
 					<div class="row">
 						<div class="span2">
 							<%= label_tag :city %>
 							<%= f.text_field :city, placeholder: "City" %>
+							<div class="message" id="city_error"></div>
 						</div>
 						<div class="span1">
 							<%= label_tag :state %>
@@ -47,20 +47,24 @@
 						<div class="span1">
 							<%= label_tag :zipcode %>
 							<%= f.text_field :zipcode, placeholder: "Zipcode" %>
+							<div class="message" id="zip_error"></div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="span2">
 							<%= label_tag :email %>
 							<%= f.text_field :email, placeholder: "Email" %>
+							<div class="message" id="email_error"></div>
 						</div>
 						<div class="span2 phonediv">
 							<%= label_tag :phone %>
 							<%= f.text_field :phone, placeholder: "Phone Number" %>
+							<div class="message" id="phone_error"></div>
 						</div>
 					</div>
 					<%= label_tag :electric, "Your average monthly electric bill is:" %>
 					<%= f.text_field :electric, placeholder: "ex: $100" %>
+					<div class="message" id="electric_error"></div>
 					<%= f.submit "Get My Quote >>", :class => "home-submit", :id => "submit1" %>
 				<% end %>
 			</div>
@@ -92,6 +96,89 @@
 				  }
 			});
 	});
+	$('input#user_phone').blur(function(event){
+		if ($('input#user_phone').val().replace(/\D+/g,'').length != 10 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 0 || $('input#user_phone').val().replace(/\D+/g,'')[0] == 1) {
+			event.preventDefault();
+			$('#phone_error').empty().append("Please enter a valid phone number");
+			$('#phonecheck img').hide();
+		}
+		if ($('input#user_phone').val().replace(/\D+/g,'').length == 10 && $('input#user_phone').val().replace(/\D+/g,'')[0] != 0 && $('input#user_phone').val().replace(/\D+/g,'')[0] != 1) {
+			$('#phone_error').empty();
+			$('#phonecheck img').show();
+		}
+	});
+
+	$('input#user_email').blur(function(event){
+		var email_format = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
+		if (!email_format.test($('input#user_email').val())) {
+			event.preventDefault();
+			$('#email_error').empty().append("Please enter a valid email");
+			$('#emailcheck img').hide();
+		}
+		if (email_format.test($('input#user_email').val())) {
+			$('#email_error').empty();
+			$('#emailcheck img').show();
+		}
+	});
+
+	$('input#first_name').blur(function(event){
+		if ($('input#first_name').val().length < 2) {
+			event.preventDefault();
+			$('#firstname_error').empty().append("Please enter your first name");
+			$('#firstnamecheck img').hide();
+		}
+		if ($('input#first_name').val().length > 0) {
+			$('#firstname_error').empty();
+			$('#firstnamecheck img').show();
+		}
+	});
+
+	$('input#last_name').blur(function(event){
+		if ($('input#last_name').val().length < 2) {
+			event.preventDefault();
+			$('#lastname_error').empty().append("Please enter your last name");
+			$('#lastnamecheck img').hide();
+		}
+		if ($('input#last_name').val().length > 0) {
+			$('#lastname_error').empty();
+			$('#lastnamecheck img').show();
+		}
+	});
+
+	$('input#user_city').blur(function(event){
+		if ($('input#user_city').val().length < 2) {
+			event.preventDefault();
+			$('#city_error').empty().append("Please enter a valid city");
+			$('#citycheck img').hide();
+		}
+		if ($('input#user_city').val().length > 0) {
+			$('#city_error').empty();
+			$('#citycheck img').show();
+		}
+	});
+	$('input#user_address').blur(function(event){
+		if ($('input#user_address').val().length < 2) {
+			event.preventDefault();
+			$('#address_error').empty().append("Please enter a valid address");
+			$('#addresscheck img').hide();
+		}
+		if ($('input#user_address').val().length > 0) {
+			$('#address_error').empty();
+			$('#addresscheck img').show();
+		}
+	});
+	$('input#user_electric').blur(function(event){
+		if ($('input#user_electric').val().length < 1) {
+			event.preventDefault();
+			$('#electric_error').empty().append("Please enter your average electric bill");
+			$('#electriccheck img').hide();
+		}
+		if ($('input#user_electric').val().length > 0) {
+			$('#electric_error').empty();
+			$('#electriccheck img').show();
+		}
+	});
+
 	$('#submit1').click(function(event){
 		$.ajax({
 			type: "POST",
@@ -108,6 +195,37 @@
 					}
 				  }
 		});
+		if ($('input#user_electric').val().length < 1) {
+			event.preventDefault();
+			$('#electric_error').empty().append("Please enter your average electric bill");
+			$('#electriccheck img').hide();
+		}
+		if ($('input#user_address').val().length < 2) {
+			event.preventDefault();
+			$('#address_error').empty().append("Please enter a valid address");
+			$('#addresscheck img').hide();
+		}
+		if ($('input#user_city').val().length < 2) {
+			event.preventDefault();
+			$('#city_error').empty().append("Please enter a valid city");
+			$('#citycheck img').hide();
+		}
+		if ($('input#last_name').val().length < 2) {
+			event.preventDefault();
+			$('#lastname_error').empty().append("Please enter your last name");
+			$('#lastnamecheck img').hide();
+		}
+		if ($('input#first_name').val().length < 2) {
+			event.preventDefault();
+			$('#firstname_error').empty().append("Please enter your first name");
+			$('#firstnamecheck img').hide();
+		}
+		var email_format = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
+		if (!email_format.test($('input#user_email').val())) {
+			event.preventDefault();
+			$('#email_error').empty().append("Please enter a valid email");
+			$('#emailcheck img').hide();
+		}
 	});
 	$(".info-box").click(function() {
 		if ($(".expand-button").text() == " + ") {
