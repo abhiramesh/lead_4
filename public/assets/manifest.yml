@@ -5,8 +5,10 @@ bbb.png: bbb-035f7ed1e42ec95f7e7fbefcd7e12aac.png
 bbb/index.png: bbb-035f7ed1e42ec95f7e7fbefcd7e12aac.png
 check.png: check-ffdb73b7f0df105e08d188bc67b9b302.png
 check/index.png: check-ffdb73b7f0df105e08d188bc67b9b302.png
-logo.png: logo-114bb26b98598b1227fc2df29b62b216.png
-logo/index.png: logo-114bb26b98598b1227fc2df29b62b216.png
+home.png: home-a5bdad7e56deb31a2e0d441519e99fce.png
+home/index.png: home-a5bdad7e56deb31a2e0d441519e99fce.png
+logo.png: logo-8c7f096416959254e597adf01ef4d8cd.png
+logo/index.png: logo-8c7f096416959254e597adf01ef4d8cd.png
 logos.png: logos-21b5c04b5bc1ad3a291eeab7678e4ed9.png
 logos/index.png: logos-21b5c04b5bc1ad3a291eeab7678e4ed9.png
 progressbar1.png: progressbar1-10d3f6fd7d858f0215e32956b2b5a4e2.png
@@ -25,8 +27,8 @@ trustlink.png: trustlink-f0574614c2f68a007f961c006cc8eb68.png
 trustlink/index.png: trustlink-f0574614c2f68a007f961c006cc8eb68.png
 application.js: application-de18d7e6b44271513c9d6f27ea57b7ac.js
 application/index.js: application-de18d7e6b44271513c9d6f27ea57b7ac.js
-application.css: application-39de891563761732884ed308750c910b.css
-application/index.css: application-39de891563761732884ed308750c910b.css
+application.css: application-e4ed24863025a710aa18dbb1e4255196.css
+application/index.css: application-e4ed24863025a710aa18dbb1e4255196.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 glyphicons-halflings-white.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png

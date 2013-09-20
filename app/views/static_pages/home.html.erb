@@ -3,87 +3,73 @@
 		<img src="/assets/logo.png">
 	</div>
 </div>
-<div class="blue-border"></div>
-<div class="container" align="center">
-	<div class="form-box">
-		<div class="form-title">
-			Free Social Security Disability Case Evaluation
+<div class="container">
+	<div class="row">
+		<div class="span7">
+			<img src="/assets/home.png" class="home-pic"> 
 		</div>
-		<div class="progress-bar">
-			<img src="/assets/progressbar1.png">
-		</div>
-		<%= form_for User.new, remote: true, :html => {:id => "form1"} do |f| %>
-			<span id="zipcode">What is your zipcode?</span>
-			<span class="required-star"><img src="/assets/required.gif"></span>
-			<%= f.text_field :zipcode, placeholder: "Zipcode" %>
-			<span class="checkimg" id="zipcheck"><img src="/assets/check.png"></span>
-			<div class="message" id="zip_error"></div>
-			<br>
-			<span id="age">How old are you?</span>
-			<span class="required-star"><img src="/assets/required.gif"></span>
-			<%= f.select :age, options_for_select(age_options, "30-39") %>
-			<span class="checkimg" id="agecheck"><img src="/assets/check.png"></span>
-			<div class="message" id="age_error"></div>
-
-			<div id="newsubmit1"></div>
-			<%= f.submit "Do I Qualify?", :class => "home-submit", :id => "submit1" %>
-		<% end %>
-	</div>
-	<div class="testimonial">
-		<div class="testimonial-title">
-			About Us:
-		</div>
-		<hr>
-		<div class="testimonial-body">
-			We assist thousands of consumers each month with applying for and receiving SSDI benefits. By matching each applicant with a licensed, expert attorney, we ensure that our clients have the highest possible chance of getting awarded Social Security Disability. Our case evaluation service is 100% free of charge.
-		</div>
-		<span class="bbb"><img src="/assets/bbb.png"></span>
-		<span class="trustlink"><img src="/assets/trustlink.png"></span>
-	</div>
-	<div class="seenin">
-		<div class="seenintitle">
-			Seen In:
-		</div>
-		<img src="/assets/seenin.png">
-	</div>
-</div>
-<div class="container" align="left">
-	<div class="info-box">
-		<span class="expand-button"> + </span><span class="info-title"> Social Security Disability Basics</span>
-		<div class="info-text">
-			<b>Basics of Social Security Disability Benefits</b>
-				<br><br>
-			Social Security Disability Benefits claims can take a long time to process and have a high chance of being denied. Up to 70% of all SSDI applications are denied the first time. Many of these applicants are actually qualified but are denied on a technicality. Partnering with an attorney increases your chances of winning disability benefits and speeds the time it takes for your case to go through the legal system.
-			Our network of attorneys helps guide the disabled through the difficult appeals and application processes. In fact, most Social Security Disability claims are successful at the appeals level. An attorney can increase your chances of getting your case heard by a judge, where you have the best chance of winning.
-			There Are Time Restrictions on Appeals
-			If you have been denied, you still have a good chance of winning benefits. However, you need to understand how the appeals process works. When you are denied, you are given a period during which you can appeal. If you wait too long, you may lose your chance. A disability lawyer knows the appeal steps and can present a strong appeals case on your behalf.
-			<br><br>
-			<b>Am I Eligible?</b>
-			<br><br>
-			The two most important qualifications for Social Security Disability Benefits are that you are disabled, and that you have enough work credits. The Social Security Administration enforces a strict definition of “disabled,” which you must meet in order to receive benefits. Proving that you are disabled is often the most difficult part of filing a disabilities claim. Work credits are years that you have worked and paid into Social Security. Unless you have spent enough years working, you are not eligible to receive benefits.
-			<br><br>
-			Our focus is to help you win your Social Security Disability (SSDI) case and receive benefits. The attorneys at Disability Legal Network have helped thousands of the disabled get the benefits they deserve. These representatives will walk you through the entire process, from initial application to your hearing and awards. They are also skilled at every level of the legal system, and can help you get your case reconsidered and win your appeal. Our attorneys start the process with a free eligibility evaluation. We don’t get paid unless you win.
-			<br><br>
-			<b>Receive a Free Case Evaluation</b>
-			<br><br>
-			<a href="#">Complete this form</a> and a representative will contact you for a free case evaluation. There are no costs and no obligations. You will find out if you are eligible to receive benefits, learn how to apply, and get tips for winning your case.
-		</div>
-	</div>
-</div>
-<div class="footer">
-	<div class="container" align="right">
-		<div class="disclaimer">
-			<div class="privacy">
-				<a style="color:white;padding-right:20px" href="/privacy"> Privacy Policy</a>
-				<a style="color:white;" href="/terms"> Terms of Use </a>
+		<div class="span5">
+			<div class="tab-box">
+				<div class="tab-text">
+					See How Much You Can Save!
+				</div>
+			</div>
+			<div class="form-box">
+				<div class="form-title">
+					Sign Up Now for a <span class="free">Free</span> Quote
+				</div>
+				<%= form_for User.new, remote: true, :html => {:id => "form1"} do |f| %>
+					<div class="row">
+						<div class="span2">
+							<%= label_tag :first_name %>
+							<%= text_field_tag :first_name, nil, :placeholder => "First Name" %>
+							<span class="checkimg" id="firstnamecheck"><img src="/assets/check.png"></span>
+							<div class="message" id="firstname_error"></div>
+						</div>
+						<div class="span2 lastnamediv">
+							<%= label_tag :last_name %>
+							<%= text_field_tag :last_name, nil, :placeholder => "Last Name" %>
+							<span class="checkimg" id="lastnamecheck"><img src="/assets/check.png"></span>
+							<div class="message" id="lastname_error"></div>
+						</div>
+					</div>
+					<%= label_tag :address %>
+					<%= f.text_field :address, placeholder: "Address" %>
+					<div class="row">
+						<div class="span2">
+							<%= label_tag :city %>
+							<%= f.text_field :city, placeholder: "City" %>
+						</div>
+						<div class="span1">
+							<%= label_tag :state %>
+							<%= f.select :state, options_for_select(us_states) %>
+						</div>
+						<div class="span1">
+							<%= label_tag :zipcode %>
+							<%= f.text_field :zipcode, placeholder: "Zipcode" %>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span2">
+							<%= label_tag :email %>
+							<%= f.text_field :email, placeholder: "Email" %>
+						</div>
+						<div class="span2 phonediv">
+							<%= label_tag :phone %>
+							<%= f.text_field :phone, placeholder: "Phone Number" %>
+						</div>
+					</div>
+					<%= label_tag :electric, "Your average monthly electric bill is:" %>
+					<%= f.text_field :electric, placeholder: "ex: $100" %>
+					<%= f.submit "Get My Quote >>", :class => "home-submit", :id => "submit1" %>
+				<% end %>
 			</div>
 		</div>
 	</div>
+	<div class="info-box">
+		sdfsdfs
+	</div>
 </div>
-<%= render partial: "users/form2" %>
-<%= render partial: "users/form3" %>
-<%= render partial: "users/form4" %>
-
 <script type="text/javascript">
 	$('input#user_zipcode').blur(function(event){
 		$.ajax({

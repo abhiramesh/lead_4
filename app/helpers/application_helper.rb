@@ -13,50 +13,60 @@ module ApplicationHelper
 	end
 
 
-	def age_options
-		[
-			["Under 18", "Under 18"],
-			["18-29", "18-29"],
-			["30-39", "30-39"],
-			["40-49", "40-49"],
-			["50-61", "50-51"],
-			["62+", "62+"],
-		]
-	end
-
-	def employment_options
-		[
-			["Yes", "Making less than $1500 per month"],
-			["No", "Making over than $1500 per month"]
-		]
-	end
-
-	def medical_options
-		[
-			["Yes", "Yes"],
-			["No", "No"]
-		]
-	end
-
-	def attorney_options
-		[
-			["No", "No"],
-			["Yes", "Yes"]
-		]
-	end
-
-	def debt_options
-		[
-			["Yes, I need debt help", "Yes, I need debt help"],
-			["No, I do not need help", "No, I do not need help"]
-		]
-	end
-
-	def loan_options
-		[
-			["Yes, I need student debt help", "Yes, I need student debt help"],
-			["No, I do not need student debt help", "No, I do not need student debt help"]
-		]
+	def us_states
+	  [
+	    ['AK', 'AK'],
+	    ['AL', 'AL'],
+	    ['AR', 'AR'],
+	    ['AZ', 'AZ'],
+	    ['CA', 'CA'],
+	    ['CO', 'CO'],
+	    ['CT', 'CT'],
+	    ['DC', 'DC'],
+	    ['DE', 'DE'],
+	    ['FL', 'FL'],
+	    ['GA', 'GA'],
+	    ['HI', 'HI'],
+	    ['IA', 'IA'],
+	    ['ID', 'ID'],
+	    ['IL', 'IL'],
+	    ['IN', 'IN'],
+	    ['KS', 'KS'],
+	    ['KY', 'KY'],
+	    ['LA', 'LA'],
+	    ['MA', 'MA'],
+	    ['MD', 'MD'],
+	    ['ME', 'ME'],
+	    ['MI', 'MI'],
+	    ['MN', 'MN'],
+	    ['MO', 'MO'],
+	    ['MS', 'MS'],
+	    ['MT', 'MT'],
+	    ['NC', 'NC'],
+	    ['ND', 'ND'],
+	    ['NE', 'NE'],
+	    ['NH', 'NH'],
+	    ['NJ', 'NJ'],
+	    ['NM', 'NM'],
+	    ['NV', 'NV'],
+	    ['NY', 'NY'],
+	    ['OH', 'OH'],
+	    ['OK', 'OK'],
+	    ['OR', 'OR'],
+	    ['PA', 'PA'],
+	    ['RI', 'RI'],
+	    ['SC', 'SC'],
+	    ['SD', 'SD'],
+	    ['TN', 'TN'],
+	    ['TX', 'TX'],
+	    ['UT', 'UT'],
+	    ['VA', 'VA'],
+	    ['VT', 'VT'],
+	    ['WA', 'WA'],
+	    ['WI', 'WI'],
+	    ['WV', 'WV'],
+	    ['WY', 'WY']
+	  ]
 	end
 
 end
