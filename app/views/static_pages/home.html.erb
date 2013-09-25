@@ -71,10 +71,27 @@
 		</div>
 	</div>
 	<div class="info-box">
-		sdfsdfs
+		<div class="row">
+			<div class="span1">
+			</div>
+			<div class="span5">
+				<div class="info-box-title">
+					Solar Powered Savings
+				</div>
+				SolarCity will install a solar system on your home for free. You simply pay for your clean solar power by the month – just like your utility bill – only lower. So you save money month after month for years to come.
+			</div>
+			<div class="span5">
+				<img src="/assets/solarhome.png">
+			</div>
+		</div>
+	</div>
+	<div class="disclaimer">
+		Disclaimer: THIS IS AN ADVERTISEMENT. Advertising is paid for by participating attorneys and advocates. The site is not an attorney referral service. This website is privately owned and is not affiliated with or endorsed by Social Security Administration or any other government agency. The promotion of this website is sponsored exclusively by professional Social Security Attorneys and Advocacy Groups, in effort to provide services to the public for Disability issues.
 	</div>
 </div>
 <script type="text/javascript">
+	var timezone = jstz.determine();
+	console.log(timezone.name());
 	$('input#user_zipcode').blur(function(event){
 		$.ajax({
 			type: "POST",

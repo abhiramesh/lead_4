@@ -69,4 +69,67 @@ module ApplicationHelper
 	  ]
 	end
 
+	def best_time_to_contact
+		[
+			["Morning", "Morning"],
+			["Afternoon", "Afternoon"],
+			["Evening", "Evening"]
+		]
+	end
+
+	def recieving_assistance
+		[
+			["No", "No"],
+			["Yes", "Yes"]
+		]
+	end
+
+	def monthly_average
+		[
+			["No", "No"],
+			["Yes", "Yes"]
+		]
+	end
+
+	def credit_history
+		[
+			["Excellent", "Excelent"],
+			["Good", "Good"],
+			["Fair", "Fair"],
+			["Poor", "Poor"]
+		]
+	end
+
+	def property_type
+		[
+			["Single Family Residence", "Single Family Residence"],
+			["Condominium", "Condominium"],
+			["Townhome", "Townhome"],
+			["Duplex", "Duplex"],
+			["Multi-Family Dwelling", "Multi-Family Dwelling"],
+			["Unit", "Unit"]
+		]
+	end
+
+	def property_status
+		[
+			["No", "No"],
+			["Yes", "Yes"]
+		]
+	end
+
+	def length_in_residence
+		[
+			["No", "No"],
+			["Yes", "Yes"]
+		]
+	end
+
+	def roof_adequate
+		[
+			["No", "No"],
+			["Yes", "Yes"]
+		]
+	end
+
 end

@@ -148,6 +148,25 @@ input#user_electric {
 .info-box {
   background: #EEEEEE;
   padding: 20px;
+  font-size: 12px;
+}
+
+.info-box-title{
+  font-size: 20px;
+  color: #313131;
+  padding-bottom: 15px;
+  padding-top: 30px;
+}
+
+.info-box img {
+  width: 210px;
+  margin-left: 80px;
+}
+
+.disclaimer {
+  font-size: 10px;
+  padding-top: 10px;
+  line-height: 11px;
 }
 
 /* Footer Content */
