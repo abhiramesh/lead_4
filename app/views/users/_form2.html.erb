@@ -1,49 +1,115 @@
 <%= form_for @user, :html => {:id => "form2"} do |f| %>
-	<%= f.label :employment, 'Do you expect to be unemployed for at least 12 months?' %>
-	<%= f.select :employment, options_for_select(employment_options) %>
-	<span class="checkimg" id="employmentcheck"><img src="/assets/check.png"></span>
-	<div class="desc">
-	</div>
-	<div class="message" id="employment_error"></div>
-
-	<%= f.label :medical, 'Are you currently receiving medical treatment for your disabling condition?' %>
-	<%= f.select :medical, options_for_select(medical_options) %>
-	<span class="checkimg" id="medicalcheck"><img src="/assets/check.png"></span>
-	<div class="desc">
-	</div>
-	<div class="message" id="medical_error"></div>
 	
-	<%= f.label :attorney, 'Do you currently have a disability or attorney advocate?' %>
-	<%= f.select :attorney, options_for_select(attorney_options) %>
-	<span class="checkimg" id="attorneycheck"><img src="/assets/check.png"></span>
+	<%= f.label :assist, 'Are you currently receiving any assistance or discounts on utility bills?' %>
+	<%= f.select :assist, options_for_select(recieving_assistance), :include_blank => true %>
+	<span class="checkimg" id="assistcheck"><img src="/assets/check.png"></span>
 	<div class="desc">
 	</div>
-	<div class="message" id="attorney_error"></div>
+	<div class="message" id="assist_error"></div>
+	
+	<%= f.label :credit, 'Credit History' %>
+	<%= f.select :credit, options_for_select(credit_history), :include_blank => true %>
+	<span class="checkimg" id="creditcheck"><img src="/assets/check.png"></span>
+	<div class="desc">
+	</div>
+	<div class="message" id="credit_error"></div>
+
+	<%= f.label :proptype, 'Property Type' %>
+	<%= f.select :proptype, options_for_select(property_type), :include_blank => true %>
+	<span class="checkimg" id="typecheck"><img src="/assets/check.png"></span>
+	<div class="desc">
+	</div>
+	<div class="message" id="type_error"></div>
+
+	<%= f.label :roof, 'Does your roof get adequate sunlight?' %>
+	<%= f.select :roof, options_for_select(roof_adequate), :include_blank => true %>
+	<span class="checkimg" id="roofcheck"><img src="/assets/check.png"></span>
+	<div class="desc">
+	</div>
+	<div class="message" id="roof_error"></div>
+
+	<%= f.label :status, 'Have you had forclosure, bankruptcy, loan modifcation, or a short sale in the last 3 years?' %>
+	<%= f.select :status, options_for_select(property_status), :include_blank => true %>
+	<span class="checkimg" id="statuscheck"><img src="/assets/check.png"></span>
+	<div class="desc">
+	</div>
+	<div class="message" id="status_error"></div>
 
 	<%= f.submit "Next >>", :class => "home-submit", :id => "submit2"%>
 <% end %>
 <script type="text/javascript">
-	$('select#user_employment').bind('click change',function() {
-		$('#employmentcheck img').show();
+	$('select#user_assist').bind('click change',function() {
+		if ($('#user_assist').val() != "") {
+			$('#assist_error').empty();
+		}
+		if ($('#user_assist').val() == "") {
+			$('#assist_error').empty().append("Please select an option");
+		}
 	});
-	$('select#user_medical').bind('click change',function() {
-		$('#medicalcheck img').show();
+	$('select#user_credit').bind('click change',function() {
+		if ($('#user_credit').val() != "") {
+			$('#credit_error').empty();
+		}
+		if ($('#user_credit').val() == "") {
+			$('#credit_error').empty().append("Please select an option");
+		}
 	});
-	$('select#user_attorney').bind('click change',function() {
-		$('#attorneycheck img').show();
+	$('select#user_proptype').bind('click change',function() {
+		if ($('#user_proptype').val() != "") {
+			$('#type_error').empty();
+		}
+		if ($('#user_proptype').val() == "") {
+			$('#type_error').empty().append("Please select an option");
+		}
 	});
-	$('#submit2').click(function(){
-		event.preventDefault();
-		$.ajax({
-			type: "POST",
-			url: $('#form2').attr('action'),
-			data: { medical: $("select#user_medical").val(), employment: $("select#user_employment").val(), attorney: $("select#user_attorney").val() },
-			dataType: "script",
-			async: false
-		});
-		$('#form2').hide();
-		$('#form3').show().appendTo('.form-box');
-		$('.progress-bar img').attr('src','/assets/progressbar3.png');
-		$('.info-box').css('margin-top','-80px')
+	$('select#user_roof').bind('click change',function() {
+		if ($('#user_roof').val() != "") {
+			$('#roof_error').empty();
+		}
+		if ($('#user_roof').val() == "") {
+			$('#roof_error').empty().append("Please select an option");
+		}
+	});
+	$('select#user_status').bind('click change',function() {
+		if ($('#user_status').val() != "") {
+			$('#status_error').empty();
+		}
+		if ($('#user_status').val() == "") {
+			$('#status_error').empty().append("Please select an option");
+		}
+	});
+	$('#submit2').click(function(event){
+		if ($('#user_status').val() == "") {
+			event.preventDefault();
+			$('#status_error').empty().append("Please select an option");
+		}
+		if ($('#user_roof').val() == "") {
+			event.preventDefault();
+			$('#roof_error').empty().append("Please select an option");
+		}
+		if ($('#user_proptype').val() == "") {
+			event.preventDefault();
+			$('#type_error').empty().append("Please select an option");
+		}
+		if ($('#user_credit').val() == "") {
+			event.preventDefault();
+			$('#credit_error').empty().append("Please select an option");
+		}
+		if ($('#user_assist').val() == "") {
+			event.preventDefault();
+			$('#assist_error').empty().append("Please select an option");
+		}
+		if ($('#user_assist').val() != "" && $('#user_credit').val() != "" && $('#user_proptype').val() != "" && $('#user_roof').val() != "" && $('#user_status').val() != "" ) {
+			event.preventDefault();
+			$.ajax({
+				type: "POST",
+				url: $('#form2').attr('action'),
+				data: { assistance: $("select#user_assist").val(), credit: $("select#user_credit").val(), type: $("select#user_proptype").val(), roof: $("select#user_roof").val(), status: $("select#user_status").val()},
+				dataType: "script",
+				async: false
+			});
+			$('#form2').hide();
+			$('#form3').show().appendTo('.form-box');
+		}
 	});
 </script>

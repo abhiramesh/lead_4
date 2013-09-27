@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130925011824) do
+ActiveRecord::Schema.define(:version => 20130927200925) do
 
   create_table "users", :force => true do |t|
     t.string   "zipcode"
@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(:version => 20130925011824) do
     t.string   "best_time"
     t.string   "assist"
     t.string   "credit"
-    t.string   "type"
     t.string   "status"
     t.string   "length"
     t.string   "roof"
+    t.string   "proptype"
   end
 
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true

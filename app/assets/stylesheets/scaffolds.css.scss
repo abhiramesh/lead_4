@@ -107,6 +107,10 @@ input#user_electric {
   width: 335px;
 }
 
+#form3, #form2{
+  display: none;
+}
+
 
 .home-submit{
   border: solid 1px #777;
@@ -141,6 +145,13 @@ input#user_electric {
   width: 200px;
   margin-left: 0px;
   font-size: 10px;
+}
+
+.desc {
+  font-size: 11px;
+  margin-top: -8px;
+  margin-bottom: 15px;
+  font-weight: bolder;
 }
 
 /* Bottom Information */

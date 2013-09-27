@@ -18,7 +18,7 @@
 				<div class="form-title">
 					Sign Up Now for a <span class="free">Free</span> Quote
 				</div>
-				<%= form_for User.new, :html => {:id => "form1"} do |f| %>
+				<%= form_for User.new, :remote => true, :html => {:id => "form1"} do |f| %>
 					<div class="row">
 						<div class="span2">
 							<%= label_tag :first_name %>
@@ -62,8 +62,8 @@
 							<div class="message" id="phone_error"></div>
 						</div>
 					</div>
-					<%= label_tag :electric, "Your average monthly electric bill is:" %>
-					<%= f.text_field :electric, placeholder: "ex: $100" %>
+					<%= label_tag :electric, "Is your monthly average electric bill over $150 per month?" %>
+					<%= f.select :electric, options_for_select(monthly_average), :include_blank => true %>
 					<div class="message" id="electric_error"></div>
 					<%= f.submit "Get My Quote >>", :class => "home-submit", :id => "submit1" %>
 				<% end %>
@@ -89,6 +89,8 @@
 		Disclaimer: THIS IS AN ADVERTISEMENT. Advertising is paid for by participating attorneys and advocates. The site is not an attorney referral service. This website is privately owned and is not affiliated with or endorsed by Social Security Administration or any other government agency. The promotion of this website is sponsored exclusively by professional Social Security Attorneys and Advocacy Groups, in effort to provide services to the public for Disability issues.
 	</div>
 </div>
+<%= render partial: 'users/form2' %>
+<%= render partial: 'users/form3' %>
 <script type="text/javascript">
 	var timezone = jstz.determine();
 	console.log(timezone.name());
@@ -184,16 +186,14 @@
 			$('#addresscheck img').show();
 		}
 	});
-	$('input#user_electric').blur(function(event){
-		if ($('input#user_electric').val().length < 1) {
-			event.preventDefault();
-			$('#electric_error').empty().append("Please enter your average electric bill");
-			$('#electriccheck img').hide();
-		}
-		if ($('input#user_electric').val().length > 0) {
+	$('select#user_electric').bind('click change',function() {
+		if ($('#user_electric').val() != "") {
 			$('#electric_error').empty();
-			$('#electriccheck img').show();
 		}
+		if ($('#user_electric').val() == "") {
+			$('#electric_error').empty().append("Please select an option");
+		}
+
 	});
 
 	$('#submit1').click(function(event){
@@ -212,10 +212,9 @@
 					}
 				  }
 		});
-		if ($('input#user_electric').val().length < 1) {
+		if ($('#user_electric').val() == "") {
 			event.preventDefault();
-			$('#electric_error').empty().append("Please enter your average electric bill");
-			$('#electriccheck img').hide();
+			$('#electric_error').empty().append("Please select an option");
 		}
 		if ($('input#user_address').val().length < 2) {
 			event.preventDefault();

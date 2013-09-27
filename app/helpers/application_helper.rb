@@ -132,4 +132,12 @@ module ApplicationHelper
 		]
 	end
 
+	def appointment
+		[
+			["No", "No"],
+			["Yes", "Yes"]
+		]
+	end
+
+
 end
