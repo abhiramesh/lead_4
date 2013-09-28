@@ -102,11 +102,11 @@ class UsersController < ApplicationController
       @user.status = params["status"]
       @user.save!
     end
-    if params["user"]["appointment"]
+    if params["user"] && params["user"]["appointment"]
       @user.appointment = params["user"]["appointment"]
       @user.save!
     end
-    if params["user"]["time_zone"]
+    if params["user"] && params["user"]["time_zone"]
       @user.time_zone = params["user"]["time_zone"]
       @user.save!
     end
@@ -121,10 +121,9 @@ class UsersController < ApplicationController
       end
       url = "https://leads.leadtracksystem.com/genericPostlead.php"
       params = {
-        "Test_Lead" => "1",
         "TYPE" => '89',
-        "SRC" => "test",
-        "Landing_Page" => "pujiisolar",
+        "SRC" => "pujsolar",
+        "Landing_Page" => "pujsolar",
         "Lead_Type" => "Solar",
         "IP_Address" => @user.ip,
         "First_Name" => @user.name.split(' ')[0],
@@ -145,8 +144,8 @@ class UsersController < ApplicationController
         "Property_Status" => @user.status,
         "Roof_Adequate" => @user.roof,
         "Length_In_Residence" => "Yes",
-        "Pub_ID" => "",
-        "Sub_ID" => "",
+        "Pub_ID" => "123",
+        "Sub_ID" => "123",
 
       }
       response = a.post(url, params)
