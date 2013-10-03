@@ -1,6 +1,6 @@
 <%= form_for @user, :html => {:id => "form3"} do |f| %>
 	<%= f.label :appointment, 'Please choose a date for your free onsight inspection.' %>
-	<%= f.date_select :appointment, :include_blank => true, :discard_year => true %>
+	<%= f.datetime_select :appointment, :include_blank => true, :discard_year => true, :discard_minute => true, :ampm => true %>
 	<span class="checkimg" id="appointmentcheck"><img src="/assets/check.png"></span>
 	<div class="desc">
 		(A specialist will call to confirm availability prior to your appointment. This date can be changed when we call to confirm)
@@ -18,12 +18,28 @@
 <% end %>
 
 <script type="text/javascript">
-	$('select#user_appointment').bind('click change',function() {
-		if ($('#user_appointment').val() != "") {
+	$('select#user_appointment_2i').bind('click change',function() {
+		if ($('#user_appointment_2i').val() != "") {
 			$('#appointment_error').empty();
 		}
-		if ($('#user_appointment').val() == "") {
-			$('#appointment_error').empty().append("Please select an option");
+		if ($('#user_appointment_2i').val() == "") {
+			$('#appointment_error').empty().append("Please select a date and time");
+		}
+	});
+	$('select#user_appointment_3i').bind('click change',function() {
+		if ($('#user_appointment_3i').val() != "") {
+			$('#appointment_error').empty();
+		}
+		if ($('#user_appointment_3i').val() == "") {
+			$('#appointment_error').empty().append("Please select a date and time");
+		}
+	});
+	$('select#user_appointment_4i').bind('click change',function() {
+		if ($('#user_appointment_4i').val() != "") {
+			$('#appointment_error').empty();
+		}
+		if ($('#user_appointment_4i').val() == "") {
+			$('#appointment_error').empty().append("Please select a date and time");
 		}
 	});
 	$('select#user_time_zone').bind('click change',function() {
@@ -35,9 +51,17 @@
 		}
 	});
 	$('#submit3').click(function(event){
-		if ($('#user_appointment').val() == "") {
+		if ($('#user_appointment_2i').val() == "") {
 			event.preventDefault();
-			$('#appointment_error').empty().append("Please select an option");
+			$('#appointment_error').empty().append("Please select a date and time");
+		}
+		if ($('#user_appointment_3i').val() == "") {
+			event.preventDefault();
+			$('#appointment_error').empty().append("Please select a date and time");
+		}
+		if ($('#user_appointment_4i').val() == "") {
+			event.preventDefault();
+			$('#appointment_error').empty().append("Please select a date and time");
 		}
 		if ($('#user_time_zone').val() == "") {
 			event.preventDefault();

@@ -113,11 +113,15 @@ input#user_electric {
 }
 
 #user_appointment_2i{
-  width: 130px;
+  width: 105px;
 }
 
 #user_appointment_3i{
-  width: 80px;
+  width: 60px;
+}
+
+#user_appointment_4i{
+  width: 60px;
 }
 
 .home-submit{
@@ -185,7 +189,14 @@ input#user_electric {
 .disclaimer {
   font-size: 10px;
   padding-top: 10px;
+  padding-bottom: 20px;
   line-height: 11px;
+}
+
+.terms-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 0px;
 }
 
 /* Footer Content */

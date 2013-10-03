@@ -102,8 +102,21 @@ class UsersController < ApplicationController
       @user.status = params["status"]
       @user.save!
     end
-    if params["user"] && params["user"]["appointment(2i)"] && params["user"]["appointment(3i)"]
-      @user.appointment = params["user"]["appointment(2i)"] + "/" + params["user"]["appointment(3i)"] + "/" + Time.now.year.to_s
+    if params["user"] && params["user"]["appointment(2i)"] && params["user"]["appointment(3i)"] && params["user"]["appointment(4i)"]
+      if params["user"]["appointment(4i)"].split("").first.to_s == "0" && params["user"]["appointment(4i)"].split("").last.to_s != "0"
+        time = params["user"]["appointment(4i)"].split("").last.to_s
+        ampm = "AM"
+      elsif params["user"]["appointment(4i)"].split("").first.to_s == "0" && params["user"]["appointment(4i)"].split("").last.to_s == "0"
+        time = "12"
+        ampm = "AM"
+      elsif params["user"]["appointment(4i)"].to_i > 12
+        time = params["user"]["appointment(4i)"] - 12
+        ampm = "PM"
+      elsif params["user"]["appointment(4i)"] == 12
+        time = "12"
+        ampm = "PM"
+      end
+      @user.appointment = params["user"]["appointment(2i)"] + "/" + params["user"]["appointment(3i)"] + "/" + Time.now.year.to_s + " " + time + ":00 " + ampm
       @user.save!
     end
     if params["user"] && params["user"]["time_zone"]
