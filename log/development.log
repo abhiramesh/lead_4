@@ -78153,3 +78153,1088 @@ Started GET "/thanks" for 127.0.0.1 at 2013-09-27 23:58:27 -0400
 Processing by StaticPagesController#thanks as HTML
   Rendered static_pages/thanks.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/abhiramesh/rails_projects/lead_4/config/routes.rb:3)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 11:15:08 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (11.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 51 LIMIT 1[0m
+  Rendered users/_form2.html.erb (5.7ms)
+  Rendered users/_form3.html.erb (1259.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (1331.1ms)
+Completed 200 OK in 2655ms (Views: 1786.3ms | ActiveRecord: 481.4ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 11:15:11 -0400
+Served asset /registration.css - 200 OK (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 11:15:11 -0400
+Served asset /jquery.js - 200 OK (127ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 11:15:11 -0400
+Served asset /scaffolds.css - 200 OK (11ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 11:15:11 -0400
+Served asset /users.css - 200 OK (5ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 11:15:11 -0400
+Served asset /static_pages.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 11:15:11 -0400
+Served asset /jquery_ujs.js - 200 OK (3ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 11:15:11 -0400
+Served asset /jstz.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 11:15:11 -0400
+Served asset /registration.js - 200 OK (2ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 11:15:11 -0400
+Served asset /static_pages.js - 200 OK (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 11:15:11 -0400
+Served asset /users.js - 200 OK (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 11:16:15 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (2.5ms)
+  Rendered users/_form3.html.erb (1.6ms)
+  Rendered static_pages/home.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:15 -0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:15 -0400
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:15 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:15 -0400
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:15 -0400
+Served asset /registration.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:15 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:15 -0400
+Served asset /jstz.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:15 -0400
+Served asset /registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:15 -0400
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:15 -0400
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 11:16:15 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (2.9ms)
+  Rendered users/_form3.html.erb (1.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:15 -0400
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:15 -0400
+Served asset /registration.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:15 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /jstz.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (3.2ms)
+  Rendered users/_form3.html.erb (2.1ms)
+  Rendered static_pages/home.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /registration.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /jstz.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:16 -0400
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 11:16:27 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (3.2ms)
+  Rendered users/_form3.html.erb (1.9ms)
+  Rendered static_pages/home.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:27 -0400
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:27 -0400
+Served asset /registration.css - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:27 -0400
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 11:16:27 -0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:27 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:27 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:28 -0400
+Served asset /jstz.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:28 -0400
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:28 -0400
+Served asset /registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 11:16:28 -0400
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 11:17:14 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (3.0ms)
+  Rendered users/_form3.html.erb (128.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (140.4ms)
+Completed 200 OK in 150ms (Views: 149.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 11:17:14 -0400
+Served asset /application.css - 200 OK (27ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 11:17:14 -0400
+Served asset /registration.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 11:17:14 -0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 11:17:15 -0400
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 11:17:15 -0400
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:15 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:15 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:15 -0400
+Served asset /jstz.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:15 -0400
+Served asset /registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:15 -0400
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:15 -0400
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:15 -0400
+Served asset /application.js - 200 OK (10ms)
+
+
+Started GET "/assets/home.png" for 127.0.0.1 at 2013-10-02 11:17:15 -0400
+Served asset /home.png - 200 OK (154ms)
+
+
+Started GET "/assets/check.png" for 127.0.0.1 at 2013-10-02 11:17:15 -0400
+Served asset /check.png - 200 OK (32ms)
+
+
+Started GET "/assets/solarhome.png" for 127.0.0.1 at 2013-10-02 11:17:15 -0400
+Served asset /solarhome.png - 200 OK (33ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-10-02 11:17:15 -0400
+Served asset /logo.png - 200 OK (19ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (2.5ms)
+  Rendered users/_form3.html.erb (1.6ms)
+  Rendered static_pages/home.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /registration.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /jstz.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /users.js - 200 OK (128ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/home.png" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /home.png - 200 OK (0ms)
+
+
+Started GET "/assets/solarhome.png" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /solarhome.png - 200 OK (0ms)
+
+
+Started GET "/assets/check.png" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /check.png - 200 OK (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-10-02 11:17:16 -0400
+Served asset /logo.png - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 11:17:33 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (2.4ms)
+  Rendered users/_form3.html.erb (1.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (9.8ms)
+Compiled scaffolds.css  (1982ms)  (pid 15856)
+Compiled application.css  (2ms)  (pid 15856)
+Completed 200 OK in 2251ms (Views: 2250.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /application.css - 200 OK (25ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /registration.css - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /scaffolds.css - 200 OK (11ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /jstz.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/check.png" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /check.png - 200 OK (0ms)
+
+
+Started GET "/assets/solarhome.png" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /solarhome.png - 200 OK (0ms)
+
+
+Started GET "/assets/home.png" for 127.0.0.1 at 2013-10-02 11:17:36 -0400
+Served asset /home.png - 200 OK (0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-10-02 11:17:41 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>""}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-10-02 11:30:34 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>""}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-10-02 11:30:34 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>""}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-10-02 11:30:34 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>""}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-10-02 11:30:35 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>""}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-10-02 11:30:35 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>""}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/checkzip" for 127.0.0.1 at 2013-10-02 11:30:35 -0400
+Processing by UsersController#checkzip as JS
+  Parameters: {"zipcode"=>""}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 19:16:22 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (2.8ms)
+  Rendered users/_form3.html.erb (2.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 109ms (Views: 108.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 19:16:22 -0400
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 19:16:22 -0400
+Served asset /registration.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 19:16:23 -0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 19:16:23 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 19:16:23 -0400
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 19:16:23 -0400
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 19:16:23 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 19:16:23 -0400
+Served asset /jstz.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 19:16:23 -0400
+Served asset /registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 19:16:23 -0400
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 19:16:23 -0400
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 19:16:23 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/solarhome.png" for 127.0.0.1 at 2013-10-02 19:16:23 -0400
+Served asset /solarhome.png - 200 OK (0ms)
+
+
+Started GET "/assets/home.png" for 127.0.0.1 at 2013-10-02 19:16:23 -0400
+Served asset /home.png - 200 OK (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-10-02 19:16:23 -0400
+Served asset /logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/check.png" for 127.0.0.1 at 2013-10-02 19:16:23 -0400
+Served asset /check.png - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (3.5ms)
+  Rendered users/_form3.html.erb (2.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /registration.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /jstz.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/home.png" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /home.png - 200 OK (18ms)
+
+
+Started GET "/assets/solarhome.png" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /solarhome.png - 200 OK (0ms)
+
+
+Started GET "/assets/check.png" for 127.0.0.1 at 2013-10-02 19:17:50 -0400
+Served asset /check.png - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (2.5ms)
+  Rendered users/_form3.html.erb (1.6ms)
+  Rendered static_pages/home.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /registration.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /jstz.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/solarhome.png" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /solarhome.png - 200 OK (0ms)
+
+
+Started GET "/assets/check.png" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /check.png - 200 OK (0ms)
+
+
+Started GET "/assets/home.png" for 127.0.0.1 at 2013-10-02 19:17:51 -0400
+Served asset /home.png - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 19:18:33 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (124.4ms)
+  Rendered users/_form3.html.erb (1.7ms)
+  Rendered static_pages/home.html.erb within layouts/application (132.2ms)
+Completed 200 OK in 143ms (Views: 142.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /registration.css - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /jstz.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/solarhome.png" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /solarhome.png - 200 OK (0ms)
+
+
+Started GET "/assets/home.png" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /home.png - 200 OK (0ms)
+
+
+Started GET "/assets/check.png" for 127.0.0.1 at 2013-10-02 19:18:34 -0400
+Served asset /check.png - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 19:20:12 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (2.8ms)
+  Rendered users/_form3.html.erb (1.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (10.1ms)
+Compiled scaffolds.css  (2037ms)  (pid 15856)
+Compiled application.css  (3ms)  (pid 15856)
+Completed 200 OK in 2449ms (Views: 2448.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /application.css - 200 OK (24ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /scaffolds.css - 200 OK (10ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /registration.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /jstz.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/check.png" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /check.png - 200 OK (0ms)
+
+
+Started GET "/assets/solarhome.png" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /solarhome.png - 200 OK (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/home.png" for 127.0.0.1 at 2013-10-02 19:20:14 -0400
+Served asset /home.png - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (124.9ms)
+  Rendered users/_form3.html.erb (1.9ms)
+  Rendered static_pages/home.html.erb within layouts/application (133.0ms)
+Completed 200 OK in 143ms (Views: 142.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /registration.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /registration.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /jstz.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.png" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /home.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/check.png" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /check.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/solarhome.png" for 127.0.0.1 at 2013-10-02 19:24:18 -0400
+Served asset /solarhome.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (2.9ms)
+  Rendered users/_form3.html.erb (1.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 22ms (Views: 21.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /registration.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /jstz.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/check.png" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /check.png - 200 OK (0ms)
+
+
+Started GET "/assets/home.png" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /home.png - 200 OK (0ms)
+
+
+Started GET "/assets/solarhome.png" for 127.0.0.1 at 2013-10-02 19:27:25 -0400
+Served asset /solarhome.png - 200 OK (0ms)
+
+
+Started GET "/assets/home.png" for 127.0.0.1 at 2013-10-02 19:28:33 -0400
+Served asset /home.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered users/_form2.html.erb (2.7ms)
+  Rendered users/_form3.html.erb (1.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/registration.css?body=1" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /registration.css - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jstz.min.js?body=1" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /jstz.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/registration.js?body=1" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/home.png" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /home.png - 200 OK (0ms)
+
+
+Started GET "/assets/solarhome.png" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /solarhome.png - 200 OK (0ms)
+
+
+Started GET "/assets/check.png" for 127.0.0.1 at 2013-10-02 19:30:14 -0400
+Served asset /check.png - 200 OK (0ms)
