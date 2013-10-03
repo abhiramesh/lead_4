@@ -102,8 +102,8 @@ class UsersController < ApplicationController
       @user.status = params["status"]
       @user.save!
     end
-    if params["user"] && params["user"]["appointment"]
-      @user.appointment = params["user"]["appointment"]
+    if params["user"] && params["user"]["appointment(2i)"] && params["user"]["appointment(3i)"]
+      @user.appointment = params["user"]["appointment(2i)"] + "/" + params["user"]["appointment(3i)"] + "/" + Time.now.year.to_s
       @user.save!
     end
     if params["user"] && params["user"]["time_zone"]

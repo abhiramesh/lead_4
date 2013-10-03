@@ -1,6 +1,6 @@
 <%= form_for @user, :html => {:id => "form3"} do |f| %>
 	<%= f.label :appointment, 'Please choose a date for your free onsight inspection.' %>
-	<%= f.select :appointment, options_for_select(appointment), :include_blank => true %>
+	<%= f.date_select :appointment, :include_blank => true, :discard_year => true %>
 	<span class="checkimg" id="appointmentcheck"><img src="/assets/check.png"></span>
 	<div class="desc">
 		(A specialist will call to confirm availability prior to your appointment. This date can be changed when we call to confirm)
