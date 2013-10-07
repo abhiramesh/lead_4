@@ -110,9 +110,9 @@ class UsersController < ApplicationController
         time = "12"
         ampm = "AM"
       elsif params["user"]["appointment(4i)"].to_i > 12
-        time = params["user"]["appointment(4i)"] - 12
+        time = params["user"]["appointment(4i)"].to_i - 12
         ampm = "PM"
-      elsif params["user"]["appointment(4i)"] == 12
+      elsif params["user"]["appointment(4i)"].to_i == 12
         time = "12"
         ampm = "PM"
       end
